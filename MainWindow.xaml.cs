@@ -11,6 +11,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
 using System.IO;
+using System.Diagnostics;
+using System.Security.Policy;
 
 namespace FishDeskNextReborn
 {
@@ -19,13 +21,6 @@ namespace FishDeskNextReborn
     /// </summary>
     public partial class MainWindow : Window
     {
-        [DllImport("user32.dll", EntryPoint = "keybd_event")]
-        public static extern void keybd_event(
-        byte bVk,    //虚拟键值
-        byte bScan,// 一般为0
-        int dwFlags,  //这里是整数类型  0 为按下，2为释放
-        int dwExtraInfo  //这里是整数类型 一般情况下设成为 0
-    );
 
         public MainWindow()
         {
@@ -36,35 +31,9 @@ namespace FishDeskNextReborn
         {
         }
 
-        public static void NextDesk()
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
-            keybd_event(0x5B, 0, 0, 0);
-            keybd_event(0x11, 0, 0, 0);
-            keybd_event(0x27, 0, 0, 0);
-            keybd_event(0x27, 0, 2, 0);
-            keybd_event(0x11, 0, 2, 0);
-            keybd_event(0x5B, 0, 2, 0);
-
+            Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true });
         }
-
-        public static void PrevDesk()
-        {
-            keybd_event(0x5B, 0, 0, 0);
-            keybd_event(0x11, 0, 0, 0);
-            keybd_event(0x25, 0, 0, 0);
-            keybd_event(0x25, 0, 2, 0);
-            keybd_event(0x11, 0, 2, 0);
-            keybd_event(0x5B, 0, 2, 0);
-        }
-
-        public static void ShowDesk()
-        {
-            keybd_event(0x5B, 0, 0, 0);
-            keybd_event(0x44, 0, 0, 0);
-            keybd_event(0x5B, 0, 2, 0);
-            keybd_event(0x44, 0, 2, 0);
-        }
-
-       
     }
 }
