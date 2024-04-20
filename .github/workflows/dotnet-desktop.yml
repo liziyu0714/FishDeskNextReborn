@@ -90,9 +90,8 @@ jobs:
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
       with:
+        token: ${{ secrets.TOKEN }}
         tag_name: ${{ github.ref }}
         release_name: Release ${{ github.ref }}
         body: TODO New Release.
@@ -101,9 +100,8 @@ jobs:
         
     - name: Upload Release Asset
       uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN }}
       with:
+        token: ${{ secrets.TOKEN }}
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./${{ secrets.ReleaseZipName }}.zip
         asset_name: ${{ secrets.ReleaseZipName }}.zip
