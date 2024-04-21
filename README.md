@@ -1,5 +1,7 @@
 # FishDeskNext:Reborn
 
+[![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
+
 Äã»¹ÔÚÎªÔÚ½ÌÊÒÀïÍæµçÄÔ±»ÀÏÊ¦·¢ÏÖ¶ø¿àÄÕÂğ?ÄãĞèÒªFishDeskNext:Reborn.
 
 FishDeskNext:Reborn »ùÓÚFishDeskNext ÖØĞÂÉè¼Æ,µ±³ÌĞòÆô¶¯Ê±,ÄãµÄWindows»áÇĞ»»µ½ÏÂÒ»¸ö×ÀÃæ.
@@ -11,3 +13,21 @@ WindowsµÄÈÎÎñÊÓÍ¼ÊÇÒ»¸öÒş±Î´°¿ÚµÄºÃ·½·¨,¿ÉÊÇÔÚ»ùÓÚ´¥¿ØµÄ½ÌÊÒµçÄÔÉÏ,Í¨¹ıÈÎÎñÀ¸Í¼±
 »ùÓÚFishDeskNext,ÎÒ¿ª·¢ÁËFishDeskNext:Reborn,¼ÓÈëÁËJumpList¹¦ÄÜ,¼´¿ÉÒÔÔÚÈÎÎñÀ¸ÉÏÓÒ¼ü(¶ÔÓ¦´¥¿ØµÄ³¤°´),»½³ö¾ßÓĞÇĞ»ØÉÏ¸ö×ÀÃæ¹¦ÄÜµÄ²Ëµ¥.
 
 ## ÓÃ·¨
+
+## ×Ô¼º±àÒë
+±àÒëĞèÒªÔÚWindows7¼°ÒÔÉÏ½øĞĞ,ĞèÒª°²×°.Net 8 SDK:[dotnet](https://dotnet.microsoft.com/)
+ÏÈ¿ËÂ¡´Ë²Ö¿â
+```
+git clone https://github.com/liziyu0714/FishDeskNextReborn.git
+cd .\FishDeskNextReborn 
+```
+
+ÔËĞĞ:
+```
+dotnet run
+```
+
+·¢²¼
+```
+dotnet publish
+```
