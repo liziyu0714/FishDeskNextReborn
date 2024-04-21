@@ -84,25 +84,3 @@ jobs:
     - name: Build Packages
       run: dotnet publish -f net8.0-windows -c Release -r win-x64 -o ./build -p:PublishReadyToRun=true,PublishSingleFile=true --self-contained false
 
-    - name: Zip the Build
-      run: makecab ${{ secrets.ReleaseZipName }} ./build/FishDeskNextReborn.exe
-      
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      with:
-        token: ${{ secrets.TOKEN }}
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
-        body: TODO New Release.
-        draft: false
-        prerelease: false
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      with:
-        token: ${{ secrets.TOKEN }}
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./${{ secrets.ReleaseZipName }}.zip
-        asset_name: ${{ secrets.ReleaseZipName }}.zip
-        asset_content_type: application/zip
