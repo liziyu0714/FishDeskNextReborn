@@ -83,5 +83,11 @@ namespace FishDeskNextReborn
         {
             LoadList();
         }
+
+        private void OpenProcessWindowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ProcessNames processNames = new ProcessNames();
+            processNames.ShowDialog(); 
+        }
     }
 }

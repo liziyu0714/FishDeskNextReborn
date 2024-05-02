@@ -16,6 +16,7 @@
                 <TextBox x:Name="InputProgTxtbox" Width="180" Margin="5"></TextBox>
                 <Button x:Name="AddBtn" Margin="5" Click="AddBtn_Click">添加</Button>
             </StackPanel>
+            <Button x:Name="OpenProcessWindowBtn" Click="OpenProcessWindowBtn_Click" Width="100">打开进程查看器</Button>
         </StackPanel>
     </Grid>
 </Window>

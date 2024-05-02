@@ -58,8 +58,7 @@ namespace FishDeskNextReborn
                 NextDesk();
                 KILL();
             }
-            // DEBUG!!!
-            // App.Current.Shutdown();
+            App.Current.Shutdown();
         }
         public static void NextDesk()
         {
