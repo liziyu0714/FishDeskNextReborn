@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
         mc:Ignorable="d"
-        Title="FishDeskNext:Reborn" Height="150" Width="800" Visibility="Visible" Loaded="Window_Loaded">
+        Title="FishDeskNext:Reborn" Height="180" Width="800" Visibility="Visible" Loaded="Window_Loaded">
     <Grid>
         <StackPanel Orientation="Vertical" Margin="20">
             <TextBlock FontSize="20" HorizontalAlignment="Center">FishDeskNextReborn</TextBlock>
@@ -14,6 +14,7 @@
             <Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/liziyu0714/FishDeskNextReborn">https://github.com/liziyu0714/FishDeskNextReborn</Hyperlink>
             </TextBlock>
             <TextBlock FontSize="10" HorizontalAlignment="Center">自豪地采用GPL v3许可证</TextBlock>
+            <Button x:Name="GoTOFlitterBtn" Click="GoTOFlitterBtn_Click" Width="120">打开过滤器</Button>
         </StackPanel>
     </Grid>
 </Window>

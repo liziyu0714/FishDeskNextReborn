@@ -35,5 +35,11 @@ namespace FishDeskNextReborn
         {
             Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true });
         }
+
+        private void GoTOFlitterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            FlitterWindow flitterWindow = new FlitterWindow();
+            flitterWindow.ShowDialog();
+        }
     }
 }

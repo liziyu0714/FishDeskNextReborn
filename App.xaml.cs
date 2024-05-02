@@ -2,6 +2,9 @@
 using System.Data;
 using System.Runtime.InteropServices;
 using System.Windows;
+using System.Diagnostics;
+using System.ComponentModel;
+using System.IO;
 
 namespace FishDeskNextReborn
 {
@@ -10,6 +13,7 @@ namespace FishDeskNextReborn
     /// </summary>
     public partial class App : Application
     {
+        private List<string> progs = new List<string>();    
         [DllImport("user32.dll", EntryPoint = "keybd_event")]
         public static extern void keybd_event(
         byte bVk,    //虚拟键值
@@ -43,6 +47,7 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             NextDesk();
+                            KILL();
                         }
                         break;
                 }
@@ -51,8 +56,10 @@ namespace FishDeskNextReborn
             {
                 ShowDesk();
                 NextDesk();
+                KILL();
             }
-            App.Current.Shutdown();
+            // DEBUG!!!
+            // App.Current.Shutdown();
         }
         public static void NextDesk()
         {
@@ -81,6 +88,48 @@ namespace FishDeskNextReborn
             keybd_event(0x44, 0, 0, 0);
             keybd_event(0x5B, 0, 2, 0);
             keybd_event(0x44, 0, 2, 0);
+        }
+
+        private void KILL()
+        {
+            if (File.Exists("killlist"))
+            {
+                foreach (string prog in File.ReadAllLines("killlist"))
+                {
+                    if (prog != "")
+                    {
+                        progs.Add(prog);
+                    }
+
+                }
+            }
+            else File.Create("killlist");
+            List<string> names = new List<string>();
+            foreach (Process p in Process.GetProcesses())
+            {
+                names.Add(p.ProcessName);
+                foreach(string prog in progs)
+                {
+                     if (p.ProcessName == prog)
+                     {
+                        try
+                        {
+                            p.Kill();
+                            p.WaitForExit(); 
+                        }
+                        catch (Win32Exception e)
+                        {
+                            Console.WriteLine(e.Message.ToString());
+                        }
+                        catch (InvalidOperationException e)
+                        {
+                            Console.WriteLine(e.Message.ToString());
+                        }
+                     }
+                }
+               
+
+            }
         }
     }
 
