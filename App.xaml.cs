@@ -91,22 +91,9 @@ namespace FishDeskNextReborn
 
         private void KILL()
         {
-            if (File.Exists("killlist"))
-            {
-                foreach (string prog in File.ReadAllLines("killlist"))
-                {
-                    if (prog != "")
-                    {
-                        progs.Add(prog);
-                    }
-
-                }
-            }
-            else File.Create("killlist");
-            List<string> names = new List<string>();
+            progs = killlistHelper.Readkilllist();
             foreach (Process p in Process.GetProcesses())
             {
-                names.Add(p.ProcessName);
                 foreach(string prog in progs)
                 {
                      if (p.ProcessName == prog)
@@ -118,17 +105,23 @@ namespace FishDeskNextReborn
                         }
                         catch (Win32Exception e)
                         {
-                            Console.WriteLine(e.Message.ToString());
+                            MessageBox.Show(e.Message.ToString());
                         }
                         catch (InvalidOperationException e)
                         {
-                            Console.WriteLine(e.Message.ToString());
+                            MessageBox.Show(e.Message.ToString());
                         }
                      }
                 }
                
 
             }
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            MessageBox.Show($"发生致命错误!{e.Exception.Message}");
+            App.Current.Shutdown();
         }
     }
 

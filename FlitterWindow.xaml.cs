@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -28,33 +29,22 @@ namespace FishDeskNextReborn
 
         private void LoadList()
         {
-            if (File.Exists("killlist"))
+            ProgListTxtbox.Text = "";
+            progs = killlistHelper.Readkilllist();
+            foreach (string s in progs)
             {
-                foreach (string prog in File.ReadAllLines("killlist"))
-                {
-                    if(prog != "")
-                    {
-                        progs.Add(prog);
-                        ProgListTxtbox.Text += $"{prog}\n";
-                    }
-                    
-                }
+                ProgListTxtbox.Text += $"{s}\n";
             }
-            else File.Create("killlist");
         }
 
         private void SaveList()
         {
-            progs = new List<string>();
-            foreach(string t in ProgListTxtbox.Text.Split('\n'))
+            progs.Clear();
+            foreach (string s in ProgListTxtbox.Text.Split('\n'))
             {
-                t.Replace("\t", "");
-                t.Replace("\n", "");
-                progs.Add(t);
+                progs.Add(s);
             }
-            if (File.Exists("killlist"))
-                File.Delete("killlist");
-            File.AppendAllLines("killlist", progs);
+            killlistHelper.Savekilllist(progs);
         }
 
         private void AddProg()
@@ -62,6 +52,7 @@ namespace FishDeskNextReborn
             progs.Add(InputProgTxtbox.Text);
             ProgListTxtbox.Text += $"{InputProgTxtbox.Text}\n";
             InputProgTxtbox.Text = "";
+            killlistHelper.Savekilllist(progs);
         }
 
         private void AddBtn_Click(object sender, RoutedEventArgs e)
@@ -88,6 +79,11 @@ namespace FishDeskNextReborn
         {
             ProcessNames processNames = new ProcessNames();
             processNames.ShowDialog(); 
+        }
+
+        private void ProgListTxtbox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            SaveList();
         }
     }
 }
