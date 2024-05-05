@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
         mc:Ignorable="d"
-        Title="过滤器" Height="450" Width="800" Closed="Window_Closed" Loaded="Window_Loaded">
+        Title="过滤器" Height="450" Width="800">
     <Grid>
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="10" FontSize="20">过滤管理器</TextBlock>
             <TextBlock Margin="5">某些应用程序存在单实例启动，在其他桌面启动这些程序时会导致Windows Shell自动切换桌面。过滤器会尝试杀死以下注册的程序。(一行一个)</TextBlock>
-            <TextBox x:Name="ProgListTxtbox" TextWrapping="Wrap" Height="160" Margin="10" LostFocus="ProgListTxtbox_LostFocus"></TextBox>
+            <TextBox x:Name="ProgListTxtbox" TextWrapping="Wrap" Height="160" Margin="10"></TextBox>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="LoadBtn" Margin="5" Click="LoadBtn_Click">加载/刷新</Button>
+                <Button x:Name="LoadBtn" Margin="5">加载/刷新</Button>
                 <TextBox x:Name="InputProgTxtbox" Width="180" Margin="5"></TextBox>
-                <Button x:Name="AddBtn" Margin="5" Click="AddBtn_Click">添加</Button>
+                <Button x:Name="AddBtn" Margin="5">添加</Button>
             </StackPanel>
             <Button x:Name="OpenProcessWindowBtn" Click="OpenProcessWindowBtn_Click" Width="100">打开进程查看器</Button>
         </StackPanel>

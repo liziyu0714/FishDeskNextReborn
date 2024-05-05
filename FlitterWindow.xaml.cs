@@ -25,6 +25,12 @@ namespace FishDeskNextReborn
         public FlitterWindow()
         {
             InitializeComponent();
+
+            this.Loaded += (sender, e) => LoadList();
+            this.Closed += (sender,e) => SaveList();
+            this.AddBtn.Click += (sender, e) => AddProg();
+            this.LoadBtn.Click += (sender, e) => LoadList();
+            this.ProgListTxtbox.LostFocus += (sender, e) => SaveList();
         }
 
         private void LoadList()
@@ -55,25 +61,6 @@ namespace FishDeskNextReborn
             killlistHelper.Savekilllist(progs);
         }
 
-        private void AddBtn_Click(object sender, RoutedEventArgs e)
-        {
-            AddProg();
-        }
-
-        private void LoadBtn_Click(object sender, RoutedEventArgs e)
-        {
-            LoadList();
-        }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            SaveList();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            LoadList();
-        }
 
         private void OpenProcessWindowBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -81,9 +68,5 @@ namespace FishDeskNextReborn
             processNames.ShowDialog(); 
         }
 
-        private void ProgListTxtbox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            SaveList();
-        }
     }
 }

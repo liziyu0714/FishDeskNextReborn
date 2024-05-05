@@ -27,16 +27,12 @@ namespace FishDeskNextReborn
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true });
         }
 
-        private void GoTOFlitterBtn_Click(object sender, RoutedEventArgs e)
+        private void GoToFlitterBtn_Click(object sender, RoutedEventArgs e)
         {
             FlitterWindow flitterWindow = new FlitterWindow();
             flitterWindow.ShowDialog();

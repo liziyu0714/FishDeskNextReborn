@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FishDeskNextReborn
 {
@@ -19,7 +22,7 @@ namespace FishDeskNextReborn
                 using (StreamReader sr = new StreamReader(killlistPath))
                 {
                     while(!sr.EndOfStream)
-                    list.Add(sr.ReadLine());
+                    list.Add(sr.ReadLine()!);
                 }
             }
             list.RemoveAll(x => x == "");
@@ -43,6 +46,34 @@ namespace FishDeskNextReborn
             }
 
             return;
+        }
+        public static void KILL()
+        {
+            List<string> progs = Readkilllist();
+            foreach (Process p in Process.GetProcesses())
+            {
+                foreach (string prog in progs)
+                {
+                    if (p.ProcessName == prog)
+                    {
+                        try
+                        {
+                            p.Kill();
+                            p.WaitForExit();
+                        }
+                        catch (Win32Exception e)
+                        {
+                            MessageBox.Show(e.Message.ToString());
+                        }
+                        catch (InvalidOperationException e)
+                        {
+                            MessageBox.Show(e.Message.ToString());
+                        }
+                    }
+                }
+
+
+            }
         }
     }
 }

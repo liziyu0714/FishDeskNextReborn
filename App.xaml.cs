@@ -13,7 +13,6 @@ namespace FishDeskNextReborn
     /// </summary>
     public partial class App : Application
     {
-        private List<string> progs = new List<string>();    
         [DllImport("user32.dll", EntryPoint = "keybd_event")]
         public static extern void keybd_event(
         byte bVk,    //虚拟键值
@@ -22,10 +21,6 @@ namespace FishDeskNextReborn
         int dwExtraInfo  //这里是整数类型 一般情况下设成为 0
     );
 
-        [DllImport("kernel32.dll")]
-        static extern bool AllocConsole();
-        [DllImport("kernel32.dll")]
-        static extern bool FreeConsole();
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -47,7 +42,7 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             NextDesk();
-                            KILL();
+                            killlistHelper.KILL();
                         }
                         break;
                 }
@@ -56,7 +51,7 @@ namespace FishDeskNextReborn
             {
                 ShowDesk();
                 NextDesk();
-                KILL();
+                killlistHelper.KILL();
             }
             App.Current.Shutdown();
         }
@@ -89,34 +84,6 @@ namespace FishDeskNextReborn
             keybd_event(0x44, 0, 2, 0);
         }
 
-        private void KILL()
-        {
-            progs = killlistHelper.Readkilllist();
-            foreach (Process p in Process.GetProcesses())
-            {
-                foreach(string prog in progs)
-                {
-                     if (p.ProcessName == prog)
-                     {
-                        try
-                        {
-                            p.Kill();
-                            p.WaitForExit(); 
-                        }
-                        catch (Win32Exception e)
-                        {
-                            MessageBox.Show(e.Message.ToString());
-                        }
-                        catch (InvalidOperationException e)
-                        {
-                            MessageBox.Show(e.Message.ToString());
-                        }
-                     }
-                }
-               
-
-            }
-        }
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
