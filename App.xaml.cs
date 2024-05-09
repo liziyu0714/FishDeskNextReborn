@@ -38,6 +38,11 @@ namespace FishDeskNextReborn
                         {
                             return;
                         }
+                    case "-E":
+                        {
+                            employHelper.EmployApplication();
+                        }
+                        break;
                     default:
                         {
                             ShowDesk();
@@ -53,16 +58,18 @@ namespace FishDeskNextReborn
                 NextDesk();
                 killlistHelper.KILL();
             }
-            App.Current.Shutdown();
+            //App.Current.Shutdown();
         }
         public static void NextDesk()
         {
+            /*
             keybd_event(0x5B, 0, 0, 0);
             keybd_event(0x11, 0, 0, 0);
             keybd_event(0x27, 0, 0, 0);
             keybd_event(0x27, 0, 2, 0);
             keybd_event(0x11, 0, 2, 0);
             keybd_event(0x5B, 0, 2, 0);
+            */
 
         }
 

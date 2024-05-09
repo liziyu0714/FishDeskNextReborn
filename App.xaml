@@ -11,5 +11,13 @@
                 <JumpTask Title="Open config"
                       IconResourcePath="C:\Windows\System32\wmploc.dll" IconResourceIndex="17" Arguments="-C"/>
             </JumpList>
-        </JumpList.JumpList>
+    </JumpList.JumpList>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

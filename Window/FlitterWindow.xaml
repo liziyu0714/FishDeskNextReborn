@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
         Title="过滤器" Height="450" Width="800">
     <Grid>
@@ -16,7 +17,7 @@
                 <TextBox x:Name="InputProgTxtbox" Width="180" Margin="5"></TextBox>
                 <Button x:Name="AddBtn" Margin="5">添加</Button>
             </StackPanel>
-            <Button x:Name="OpenProcessWindowBtn" Click="OpenProcessWindowBtn_Click" Width="100">打开进程查看器</Button>
+            <Button x:Name="OpenProcessWindowBtn" Click="OpenProcessWindowBtn_Click" Width="120" HorizontalAlignment="Left" Margin="10">打开进程查看器</Button>
         </StackPanel>
     </Grid>
 </Window>

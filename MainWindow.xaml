@@ -4,9 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        WindowStyle="None"
+        AllowsTransparency="True"
         mc:Ignorable="d"
-        Title="FishDeskNext:Reborn" Height="180" Width="800">
+        Title="FishDeskNext:Reborn" Height="160" Width="800"
+        >
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="0.4">
+                <GradientStop Color="#fbc2eb" Offset="0.0" />
+                <GradientStop Color="#a6c1ee" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <StackPanel Orientation="Vertical" Margin="20">
             <TextBlock FontSize="20" HorizontalAlignment="Center">FishDeskNextReborn</TextBlock>
             <TextBlock FontSize="10" HorizontalAlignment="Center">支持开源和开放的软件!</TextBlock>
@@ -15,7 +25,11 @@
             </TextBlock>
             <TextBlock FontSize="10" HorizontalAlignment="Center">自豪地采用GPL v3许可证</TextBlock>
             <TextBlock FontSize="10" HorizontalAlignment="Center">End of Life Warning: 5 commits left</TextBlock>
-            <Button x:Name="GoToFlitterBtn" Click="GoToFlitterBtn_Click" Width="120">打开过滤器</Button>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="GoToFlitterBtn" Click="GoToFlitterBtn_Click" Width="120" Margin="5">打开过滤器</Button>
+                <Button x:Name="CloseWindowBtn" Width="120" Margin="5">关闭窗口</Button>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </Window>

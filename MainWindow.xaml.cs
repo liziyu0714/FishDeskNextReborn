@@ -25,6 +25,7 @@ namespace FishDeskNextReborn
         public MainWindow()
         {
             InitializeComponent();
+            CloseWindowBtn.Click += (e, sender) => { this.Close(); };
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

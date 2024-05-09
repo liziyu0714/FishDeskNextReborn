@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
         mc:Ignorable="d"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
         Title="ProcessNames" Height="450" Width="450" Loaded="Window_Loaded">
     <Grid>
         <StackPanel Orientation="Vertical">
