@@ -32,33 +32,35 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             PrevDesk();
+                            App.Current.Shutdown();
                         }
                         break;
-                    case "-C":
+                    case "-N":
                         {
-                            return;
+                            ShowDesk();
+                            NextDesk();
+                            killlistHelper.KILL();
+                            App.Current.Shutdown();
                         }
+                        break;
                     case "-E":
                         {
                             employHelper.EmployApplication();
                         }
                         break;
-                    default:
-                        {
-                            ShowDesk();
-                            NextDesk();
-                            killlistHelper.KILL();
-                        }
-                        break;
                 }
             }
-            else
+            if (mutexHelper.Detect())
             {
-                ShowDesk();
-                NextDesk();
-                killlistHelper.KILL();
+                mutexHelper.PostMessage(
+                    (IntPtr)mutexHelper.HWND_BROADCAST,
+                    mutexHelper.WM_SHOW,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
+                Application.Current.Shutdown();
             }
-            //App.Current.Shutdown();
+            else mutexHelper.CreateMutex();
+
         }
         public static void NextDesk()
         {
@@ -96,6 +98,11 @@ namespace FishDeskNextReborn
         {
             MessageBox.Show($"发生致命错误!{e.Exception.Message}");
             App.Current.Shutdown();
+        }
+
+        private void Application_Exit(object sender, ExitEventArgs e)
+        {
+            mutexHelper.DestroyMutex();
         }
     }
 
