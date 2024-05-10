@@ -1,0 +1,23 @@
+﻿<Window x:Class="FishDeskNextReborn.window.ErrorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FishDeskNextReborn.window"
+        mc:Ignorable="d"
+        Title="ErrorWindow" Height="400" Width="400">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="0.3">
+                <GradientStop Color="#4facfe" Offset="0.0" />
+                <GradientStop Color="#00f2fe" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Orientation="Vertical">
+            <TextBlock FontSize="26" HorizontalAlignment="Center" Margin="5">啊，出错了</TextBlock>
+            <TextBlock x:Name="txtblockErrorDesp" Margin="5">错误名称:</TextBlock>
+            <TextBlock x:Name="txtblockErrorType" Margin="5">错误类型:</TextBlock>
+            <TextBlock x:Name="txtblockErrorStack" Margin="20" TextWrapping="Wrap">调用堆栈:</TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -19,11 +19,23 @@ WindowsµÄÈÎÎñÊÓÍ¼ÊÇÒ»¸öÒþ±Î´°¿ÚµÄºÃ·½·¨,¿ÉÊÇÔÚ»ùÓÚ´¥¿ØµÄ½ÌÊÒµçÄÔÉÏ,Í¨¹ýÈÎÎñÀ¸Í¼±
 ```
 ÏòÇ°ÇÐ»»×ÀÃæ
 ```
--C
+-N
 ```
-´ò¿ªÖ÷½çÃæ
+ÏòºóÇÐ»»×ÀÃæ
 
-²»´«Èë²ÎÊýÄ¬ÈÏÏòºóÇÐ»»×ÀÃæ.
+```
+-E
+```
+´ò¿ª²¿Êð¹¤¾ß(»¹ÔÚÐ´)
+
+²»´«Èë²ÎÊýÏÖÔÚÊÇ´ò¿ªÖ÷½çÃæÁË.
+
+## Todo
+- [x] µ¥ÊµÀý¹¦ÄÜ
+- [ ] ²¿Êð¹¤¾ß
+- [ ] ×Ô¸üÐÂ
+- [ ] ¸ü¸ÄÅäÉ«
+- [ ] È«ÆÁ¶¯»­
 
 ## ×Ô¼º±àÒë
 ±àÒëÐèÒªÔÚWindows7¼°ÒÔÉÏ½øÐÐ,ÐèÒª°²×°.Net 8 SDK:[dotnet](https://dotnet.microsoft.com/)

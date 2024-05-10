@@ -5,6 +5,7 @@ using System.Windows;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.IO;
+using FishDeskNextReborn.window;
 
 namespace FishDeskNextReborn
 {
@@ -64,15 +65,12 @@ namespace FishDeskNextReborn
         }
         public static void NextDesk()
         {
-            /*
             keybd_event(0x5B, 0, 0, 0);
             keybd_event(0x11, 0, 0, 0);
             keybd_event(0x27, 0, 0, 0);
             keybd_event(0x27, 0, 2, 0);
             keybd_event(0x11, 0, 2, 0);
             keybd_event(0x5B, 0, 2, 0);
-            */
-
         }
 
         public static void PrevDesk()
@@ -96,7 +94,8 @@ namespace FishDeskNextReborn
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            MessageBox.Show($"发生致命错误!{e.Exception.Message}");
+            ErrorWindow errorWindow = new ErrorWindow(e.Exception);
+            errorWindow.Show();
             App.Current.Shutdown();
         }
 
