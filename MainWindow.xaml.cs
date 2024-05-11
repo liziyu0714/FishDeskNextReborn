@@ -15,6 +15,7 @@ using System.Diagnostics;
 using System.Security.Policy;
 using HandyControl.Controls;
 using System.Windows.Interop;
+using FishDeskNextReborn.window;
 
 namespace FishDeskNextReborn
 {
@@ -28,6 +29,12 @@ namespace FishDeskNextReborn
         {
             InitializeComponent();
 
+            if(App.DeployMark)
+            {
+                DeployWindow deployWindow = new DeployWindow();
+                deployWindow.ShowDialog();
+            }
+
             CloseWindowBtn.Click += (e, sender) => { this.Visibility = Visibility.Hidden; };
             DragBtn.PreviewMouseLeftButtonDown += (e, sender) => { this.DragMove(); };
             this.Loaded += (e,sender) => { Growl.Warning("EOL Warning:此应用的支持将会在再可预见的将来终止"); };
@@ -37,6 +44,11 @@ namespace FishDeskNextReborn
             miPreviousDesktop.Click += (e, sender) => { App.PrevDesk(); };
             miOpenConfig.Click += (e, sender) => { this.Visibility = Visibility.Visible; };
             miExit.Click += (e, sender) => { Application.Current.Shutdown(); };
+            OpenDeployBtn.Click += (e, sender) =>
+            {
+                DeployWindow deployWindow = new DeployWindow();
+                deployWindow.ShowDialog();
+            };
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)

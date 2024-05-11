@@ -9,8 +9,10 @@
     <JumpList.JumpList>
             <JumpList ShowRecentCategory="True" ShowFrequentCategory="True">
                 <JumpTask Title="Move to previous desktop" Arguments="-P"/>
+                <JumpTask Title="Move to next desktop" Arguments="-N"/>
+                <JumpTask Title="Deploy FDNR" Arguments="-D"/>
                 <JumpTask Title="Open config"
-                      IconResourcePath="C:\Windows\System32\wmploc.dll" IconResourceIndex="17" Arguments="-C"/>
+                      IconResourcePath="C:\Windows\System32\wmploc.dll" IconResourceIndex="17"/>
             </JumpList>
     </JumpList.JumpList>
     <Application.Resources>

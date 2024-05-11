@@ -27,6 +27,7 @@
                 <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">自豪地采用GPL v3许可证</TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="GoToFlitterBtn" Click="GoToFlitterBtn_Click" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开过滤器</Button>
+                    <Button x:Name="OpenDeployBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开部署工具</Button>
                     <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong">关闭窗口</Button>
                     <Button x:Name="DragBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">按住以拖拽</Button>
                 </StackPanel>

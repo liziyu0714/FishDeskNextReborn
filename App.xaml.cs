@@ -21,7 +21,7 @@ namespace FishDeskNextReborn
         int dwFlags,  //这里是整数类型  0 为按下，2为释放
         int dwExtraInfo  //这里是整数类型 一般情况下设成为 0
     );
-
+        public static bool DeployMark = false;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -33,7 +33,8 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             PrevDesk();
-                            App.Current.Shutdown();
+                            Application.Current.Shutdown();
+                            Environment.Exit(0);
                         }
                         break;
                     case "-N":
@@ -41,12 +42,13 @@ namespace FishDeskNextReborn
                             ShowDesk();
                             NextDesk();
                             killlistHelper.KILL();
-                            App.Current.Shutdown();
+                            Application.Current.Shutdown();
+                            Environment.Exit(0);
                         }
                         break;
-                    case "-E":
+                    case "-D":
                         {
-                            employHelper.EmployApplication();
+                           DeployMark = true;
                         }
                         break;
                 }
@@ -95,7 +97,7 @@ namespace FishDeskNextReborn
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
             ErrorWindow errorWindow = new ErrorWindow(e.Exception);
-            errorWindow.Show();
+            errorWindow.ShowDialog();
             App.Current.Shutdown();
         }
 
