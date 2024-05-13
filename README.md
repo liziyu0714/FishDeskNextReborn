@@ -2,6 +2,8 @@
 
 [![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
+**FishDeskNext:Reborn×¼±¸¸Ä¸öÃû×Ö£¬ÒòÎª½ÓÏÂÀ´ÒªĞ´¸ü¶àNext£¬²»Ö¹ÓÚÇĞ»»×ÀÃæ**
+
 Äã»¹ÔÚÎªÔÚ½ÌÊÒÀïÍæµçÄÔ±»ÀÏÊ¦·¢ÏÖ¶ø¿àÄÕÂğ?ÄãĞèÒªFishDeskNext:Reborn.
 
 FishDeskNext:Reborn »ùÓÚFishDeskNext ÖØĞÂÉè¼Æ,µ±³ÌĞòÆô¶¯Ê±,ÄãµÄWindows»áÇĞ»»µ½ÏÂÒ»¸ö×ÀÃæ.
@@ -26,16 +28,18 @@ WindowsµÄÈÎÎñÊÓÍ¼ÊÇÒ»¸öÒş±Î´°¿ÚµÄºÃ·½·¨,¿ÉÊÇÔÚ»ùÓÚ´¥¿ØµÄ½ÌÊÒµçÄÔÉÏ,Í¨¹ıÈÎÎñÀ¸Í¼±
 ```
 -E
 ```
-´ò¿ª²¿Êğ¹¤¾ß(»¹ÔÚĞ´)
+´ò¿ª²¿Êğ¹¤¾ß
 
 ²»´«Èë²ÎÊıÏÖÔÚÊÇ´ò¿ªÖ÷½çÃæÁË.
 
-## Todo
+## Â·ÏßÍ¼
 - [x] µ¥ÊµÀı¹¦ÄÜ
 - [x] ²¿Êğ¹¤¾ß
-- [ ] ×Ô¸üĞÂ
 - [ ] ¸ü¸ÄÅäÉ«
+- [ ] ÇĞ»»ÓÃ»§(Next Account)
+- [ ] ÇĞ»»Session
 - [ ] È«ÆÁ¶¯»­
+- [ ] ×Ô¸üĞÂ
 
 ## ×Ô¼º±àÒë
 ±àÒëĞèÒªÔÚWindows7¼°ÒÔÉÏ½øĞĞ,ĞèÒª°²×°.Net 8 SDK:[dotnet](https://dotnet.microsoft.com/)
