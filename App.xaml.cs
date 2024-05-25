@@ -33,6 +33,7 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             PrevDesk();
+                            ShowDesk();
                             Application.Current.Shutdown();
                             Environment.Exit(0);
                         }
@@ -41,6 +42,7 @@ namespace FishDeskNextReborn
                         {
                             ShowDesk();
                             NextDesk();
+                            ShowDesk();
                             killlistHelper.KILL();
                             Application.Current.Shutdown();
                             Environment.Exit(0);
