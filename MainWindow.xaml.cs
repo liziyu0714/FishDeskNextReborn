@@ -29,12 +29,7 @@ namespace FishDeskNextReborn
         {
             InitializeComponent();
 
-            if(App.DeployMark)
-            {
-                DeployWindow deployWindow = new DeployWindow();
-                deployWindow.ShowDialog();
-            }
-
+            //挂载事件
             CloseWindowBtn.Click += (e, sender) => { this.Visibility = Visibility.Hidden; };
             DragBtn.PreviewMouseLeftButtonDown += (e, sender) => { this.DragMove(); };
             this.Loaded += (e,sender) => { Growl.Warning("EOL Warning:此应用的支持将会在再可预见的将来终止"); };
@@ -49,6 +44,8 @@ namespace FishDeskNextReborn
                 DeployWindow deployWindow = new DeployWindow();
                 deployWindow.ShowDialog();
             };
+            DebugBtn.Click += (e, sender) => { Test(); };
+
         }
 
         private void Hyperlink_Click(object sender, RoutedEventArgs e)
@@ -74,7 +71,31 @@ namespace FishDeskNextReborn
                 this.Visibility = Visibility.Visible;
                 this.Focus();
             }
+
+            if(msg == mutexHelper.WM_LAUNCH_SHOWINFO)
+            {
+                Growl.InfoGlobal("当程序处于TaskView模式时，切换的是\"任务视图\"中的桌面;切换为Win32模式时,会调用win32api切换正真的Desktop");
+                this.Visibility = Visibility.Hidden;
+            }
+
+            if(msg == mutexHelper.WM_LAUNCH_DEPLOY)
+            {
+                DeployWindow deployWindow = new DeployWindow();
+                deployWindow.ShowDialog();
+                this.Visibility = Visibility.Hidden;    
+            }
+
+            if(msg == mutexHelper.WM_LAUNCH_TOGGLE_MODE)
+            {
+                
+            }
             return IntPtr.Zero;
+        }
+
+        private void Test()
+        {
+            //IntPtr wst = DesktopUtils.GetProcessWindowStation();
+            //DesktopUtils.EnumDesktops(wst, (name,lp) => { System.Windows.MessageBox.Show(name);return true; }, 0);
         }
     }
 }

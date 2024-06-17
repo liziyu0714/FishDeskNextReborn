@@ -8,10 +8,12 @@
              DispatcherUnhandledException="Application_DispatcherUnhandledException">
     <JumpList.JumpList>
             <JumpList ShowRecentCategory="True" ShowFrequentCategory="True">
-                <JumpTask Title="Move to previous desktop" Arguments="-P"/>
-                <JumpTask Title="Move to next desktop" Arguments="-N"/>
-                <JumpTask Title="Deploy FDNR" Arguments="-D"/>
-                <JumpTask Title="Open config"
+            <JumpTask Title="Move to previous desktop" Arguments="-P"/>
+            <JumpTask Title="Move to next desktop" Arguments="-N"/>
+            <JumpTask Title="Deploy FDNR" Arguments="-D"/>
+            <JumpTask Title="Now Mode:TaskView" Arguments="-S"/>
+            <JumpTask Title="Change Mode" Arguments="-T"/>
+            <JumpTask Title="Open config"
                       IconResourcePath="C:\Windows\System32\wmploc.dll" IconResourceIndex="17"/>
             </JumpList>
     </JumpList.JumpList>

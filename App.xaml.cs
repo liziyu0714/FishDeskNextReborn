@@ -22,6 +22,9 @@ namespace FishDeskNextReborn
         int dwExtraInfo  //这里是整数类型 一般情况下设成为 0
     );
         public static bool DeployMark = false;
+        public static bool showMainWindow = true;
+        public static bool sendInfoMark = false;
+        public static bool toggleModeMark = false;
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
@@ -34,8 +37,8 @@ namespace FishDeskNextReborn
                             ShowDesk();
                             PrevDesk();
                             ShowDesk();
-                            Application.Current.Shutdown();
-                            Environment.Exit(0);
+                            killlistHelper.KILL();
+                            showMainWindow = false;
                         }
                         break;
                     case "-N":
@@ -44,26 +47,71 @@ namespace FishDeskNextReborn
                             NextDesk();
                             ShowDesk();
                             killlistHelper.KILL();
-                            Application.Current.Shutdown();
-                            Environment.Exit(0);
+                            showMainWindow = false;
                         }
                         break;
                     case "-D":
                         {
                            DeployMark = true;
+                            showMainWindow = false;
+                        }
+                        break;
+                    case "-S":
+                        {
+                            sendInfoMark = true;
+                            showMainWindow = false;
+                        }
+                        break;
+                    case "-T":
+                        {
+                            toggleModeMark  = true;
+                            showMainWindow = false;
                         }
                         break;
                 }
             }
+            //已存在实例,传递消息
             if (mutexHelper.Detect())
             {
-                mutexHelper.PostMessage(
+                if(DeployMark)
+                {
+                    mutexHelper.PostMessage(
+                    (IntPtr)mutexHelper.HWND_BROADCAST,
+                    mutexHelper.WM_LAUNCH_DEPLOY,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
+                }
+                
+                if(sendInfoMark)
+                {
+                    mutexHelper.PostMessage(
+                    (IntPtr)mutexHelper.HWND_BROADCAST,
+                    mutexHelper.WM_LAUNCH_SHOWINFO,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
+                }
+
+                if (toggleModeMark)
+                {
+                    mutexHelper.PostMessage(
+                    (IntPtr)mutexHelper.HWND_BROADCAST,
+                    mutexHelper.WM_LAUNCH_TOGGLE_MODE,
+                    IntPtr.Zero,
+                    IntPtr.Zero);
+                }
+
+
+                if (showMainWindow)
+                {
+                    mutexHelper.PostMessage(
                     (IntPtr)mutexHelper.HWND_BROADCAST,
                     mutexHelper.WM_SHOW,
                     IntPtr.Zero,
                     IntPtr.Zero);
-                Application.Current.Shutdown();
+                }
+               App.Current.Shutdown();
             }
+            //正常启动
             else mutexHelper.CreateMutex();
 
         }
