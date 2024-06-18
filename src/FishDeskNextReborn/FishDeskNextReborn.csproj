@@ -19,8 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="FDNRBox\FDNRBox.csproj" />
+    <ProjectReference Include="..\FDNRBox\FDNRBox.csproj" />
   </ItemGroup>
+
 
   <ItemGroup>
     <Reference Include="Interop.IWshRuntimeLibrary">
