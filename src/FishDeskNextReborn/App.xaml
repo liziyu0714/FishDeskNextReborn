@@ -11,8 +11,8 @@
             <JumpTask Title="Move to previous desktop" Arguments="-P"/>
             <JumpTask Title="Move to next desktop" Arguments="-N"/>
             <JumpTask Title="Deploy FDNR" Arguments="-D"/>
-            <JumpTask Title="Now Mode:TaskView" Arguments="-S"/>
             <JumpTask Title="Change Mode" Arguments="-T"/>
+            <JumpTask Title="Open Desktop Manage Window" Arguments="--OpenDesktopMgmt"/>
             <JumpTask Title="Open config"
                       IconResourcePath="C:\Windows\System32\wmploc.dll" IconResourceIndex="17"/>
             </JumpList>
@@ -23,6 +23,10 @@
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <LinearGradientBrush x:Key="BackGroundBrush" StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="1">
+                <GradientStop Color="#fbc2eb" Offset="0.0" />
+                <GradientStop Color="#a6c1ee" Offset="1.0" />
+            </LinearGradientBrush>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:FishDeskNextReborn"
         xmlns:hc="https://handyorg.github.io/handycontrol"
         mc:Ignorable="d"
-        Title="过滤器" Height="450" Width="800">
+        Title="过滤器" Height="450" Width="800"
+        Background="{StaticResource BackGroundBrush}">
     <Grid>
+       
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="10" FontSize="20">过滤管理器</TextBlock>
             <TextBlock Margin="5">某些应用程序存在单实例启动，在其他桌面启动这些程序时会导致Windows Shell自动切换桌面。过滤器会尝试杀死以下注册的程序。(一行一个)</TextBlock>

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FishDeskNextReborn", "src\FishDeskNextReborn\FishDeskNextReborn.csproj", "{C7B2C177-57B7-4AA0-BDEC-8B1DE96ABF5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FDNRBox", "src\FDNRBox\FDNRBox.csproj", "{2961AABE-BE56-4537-9B57-B2BCDA64FE21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FDNRAPI", "src\FDNRBox\FDNRAPI.csproj", "{2961AABE-BE56-4537-9B57-B2BCDA64FE21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

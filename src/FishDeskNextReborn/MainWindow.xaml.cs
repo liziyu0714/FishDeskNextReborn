@@ -16,6 +16,8 @@ using System.Security.Policy;
 using HandyControl.Controls;
 using System.Windows.Interop;
 using FishDeskNextReborn.window;
+using static FishDeskNextReborn.Helpers.taskviewToggler;
+using FishDeskNextReborn.Helpers;
 
 namespace FishDeskNextReborn
 {
@@ -24,78 +26,95 @@ namespace FishDeskNextReborn
     /// </summary>
     public partial class MainWindow : System.Windows.Window
     {
+        public DeployWindow deployWindow = new DeployWindow();
+        public DesktopMgmtWindow desktopMgmtWindow = new DesktopMgmtWindow();
+        public FlitterWindow flitterWindow = new FlitterWindow();
+        public ToggleDesktopMode togglemode = ToggleDesktopMode.TaskView;
+
+        public enum ToggleDesktopMode
+        {
+            Win32, TaskView
+        }
+
 
         public MainWindow()
         {
             InitializeComponent();
 
             //挂载事件
-            CloseWindowBtn.Click += (e, sender) => { this.Visibility = Visibility.Hidden; };
-            DragBtn.PreviewMouseLeftButtonDown += (e, sender) => { this.DragMove(); };
-            this.Loaded += (e,sender) => { Growl.Warning("EOL Warning:此应用的支持将会在再可预见的将来终止"); };
-            ntfIcon.Click += (e, sender) => { this.Visibility = Visibility.Visible; };
-            ntfIcon.MouseDoubleClick += (e, sender) => { App.NextDesk(); };
-            miNextDesktop.Click += (e, sender) => { App.NextDesk(); };
-            miPreviousDesktop.Click += (e, sender) => { App.PrevDesk(); };
-            miOpenConfig.Click += (e, sender) => { this.Visibility = Visibility.Visible; };
-            miExit.Click += (e, sender) => { Application.Current.Shutdown(); };
-            OpenDeployBtn.Click += (e, sender) =>
+            RegistEvents();
+
+            this.Loaded += (object sender, RoutedEventArgs e) => 
             {
-                DeployWindow deployWindow = new DeployWindow();
-                deployWindow.ShowDialog();
+                //解析参数
+                if (App.LaunchArgs != null && App.LaunchArgs.Length > 0)
+                {
+                    argResolver.Resolve(App.LaunchArgs);
+                    this.Visibility = Visibility.Hidden;
+                }
             };
-            DebugBtn.Click += (e, sender) => { Test(); };
+            
 
-        }
-
-        private void Hyperlink_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true });
-        }
-
-        private void GoToFlitterBtn_Click(object sender, RoutedEventArgs e)
-        {
-            FlitterWindow flitterWindow = new FlitterWindow();
-            flitterWindow.ShowDialog();
         }
         protected override void OnSourceInitialized(EventArgs e)
         {
             base.OnSourceInitialized(e);
-            HwndSource hwndSource = PresentationSource.FromVisual(this) as HwndSource;
+            HwndSource? hwndSource = PresentationSource.FromVisual(this) as HwndSource;
             hwndSource!.AddHook(WndProc);
         }
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wparam, IntPtr lparam, ref bool handled)
         {
-            if (msg == mutexHelper.WM_SHOW)
-            {
-                this.Visibility = Visibility.Visible;
-                this.Focus();
-            }
+            return broadcastHelper.ProcessMessage(msg, this);
+        }
 
-            if(msg == mutexHelper.WM_LAUNCH_SHOWINFO)
-            {
-                Growl.InfoGlobal("当程序处于TaskView模式时，切换的是\"任务视图\"中的桌面;切换为Win32模式时,会调用win32api切换正真的Desktop");
-                this.Visibility = Visibility.Hidden;
-            }
-
-            if(msg == mutexHelper.WM_LAUNCH_DEPLOY)
-            {
-                DeployWindow deployWindow = new DeployWindow();
-                deployWindow.ShowDialog();
-                this.Visibility = Visibility.Hidden;    
-            }
-
-            if(msg == mutexHelper.WM_LAUNCH_TOGGLE_MODE)
-            {
-                
-            }
-            return IntPtr.Zero;
+        private void RegistEvents()
+        {
+            CloseWindowBtn.Click += (e, sender) => { this.Visibility = Visibility.Hidden; };
+            DragBtn.PreviewMouseLeftButtonDown += (e, sender) => { this.DragMove(); };
+            ntfIcon.Click += (e, sender) => { this.Visibility = Visibility.Visible; };
+            ntfIcon.MouseDoubleClick += (e, sender) => { NextDesktop(); };
+            miNextDesktop.Click += (e, sender) => { NextDesktop(); };
+            miPreviousDesktop.Click += (e, sender) => { PreviousDesktop(); };
+            miOpenConfig.Click += (e, sender) => { this.Visibility = Visibility.Visible; };
+            miExit.Click += (e, sender) => { Application.Current.Shutdown(); };
+            OpenDeployBtn.Click += (e, sender) => { deployWindow = new DeployWindow(); deployWindow.ShowDialog(); };
+            DebugBtn.Click += (e, sender) => { Test(); };
+            linkOpenHyperLink.Click += (e, sender) => { Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true }); };
+            GoToFlitterBtn.Click += (e, sender) => { flitterWindow = new FlitterWindow(); flitterWindow.ShowDialog(); };
+            DesktopMgmtOpenBtn.Click += (e, sender) => { desktopMgmtWindow = new DesktopMgmtWindow(); desktopMgmtWindow.ShowDialog(); };
         }
 
         private void Test()
         {
-            //IntPtr wst = DesktopUtils.GetProcessWindowStation();
-            //DesktopUtils.EnumDesktops(wst, (name,lp) => { System.Windows.MessageBox.Show(name);return true; }, 0);
+            
+        }
+
+        public void NextDesktop()
+        {
+            if(togglemode == ToggleDesktopMode.TaskView)
+            {
+                ShowDesk();
+                NextDesk();
+                ShowDesk();
+                killlistHelper.KILL();
+            }
+        }
+        public void PreviousDesktop()
+        {
+            if(togglemode == ToggleDesktopMode.TaskView)
+            {
+                ShowDesk();
+                PrevDesk();
+                ShowDesk();
+                killlistHelper.KILL();
+            }
+        }
+
+        public void ChangeToggleMode()
+        {
+            if (togglemode == ToggleDesktopMode.TaskView)
+                togglemode = ToggleDesktopMode.Win32;
+            else togglemode = ToggleDesktopMode.TaskView;
         }
     }
 }

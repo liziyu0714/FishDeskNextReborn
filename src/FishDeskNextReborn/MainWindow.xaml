@@ -8,30 +8,31 @@
         WindowStyle="None"
         AllowsTransparency="True"
         mc:Ignorable="d"
-        Title="FishDeskNext:Reborn" Height="150" Width="800"
+        Title="FishDeskNext:Reborn" Height="200" Width="800"
+        Background="{StaticResource BackGroundBrush}"
         >
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="0.7">
-                <GradientStop Color="#fbc2eb" Offset="0.0" />
-                <GradientStop Color="#a6c1ee" Offset="1.0" />
-            </LinearGradientBrush>
-        </Grid.Background>
         <Border CornerRadius="5" BorderThickness="2" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Margin="20">
-                <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}">FishDeskNextReborn</TextBlock>
-                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">支持开源和开放的软件!</TextBlock>
-                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">开源地址:
-                    <Hyperlink Click="Hyperlink_Click" NavigateUri="https://github.com/liziyu0714/FishDeskNextReborn">https://github.com/liziyu0714/FishDeskNextReborn</Hyperlink>
-                </TextBlock>
-                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">自豪地采用GPL v3许可证</TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="GoToFlitterBtn" Click="GoToFlitterBtn_Click" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开过滤器</Button>
-                    <Button x:Name="OpenDeployBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开部署工具</Button>
-                    <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong">关闭窗口</Button>
                     <Button x:Name="DragBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">按住以拖拽</Button>
-                    <Button x:Name="DebugBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">调试按钮</Button>
+                    <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}" Margin="10">FishDeskNextReborn</TextBlock>
+                    <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong">关闭窗口</Button>
                 </StackPanel>
+
+                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">支持开源和开放的软件!自豪地采用GPL v3许可证。</TextBlock>
+                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">开源地址:
+                    <Hyperlink x:Name="linkOpenHyperLink" NavigateUri="https://github.com/liziyu0714/FishDeskNextReborn">https://github.com/liziyu0714/FishDeskNextReborn</Hyperlink>
+                </TextBlock>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button x:Name="GoToFlitterBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开过滤器</Button>
+                        <Button x:Name="OpenDeployBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开部署工具</Button>
+                        <Button x:Name="DebugBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">调试按钮</Button>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="DesktopMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong">打开桌面管理器</Button>
+                </StackPanel>
+
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
                     <StackPanel VerticalAlignment="Top" Margin="0,10,10,10"/>
                 </ScrollViewer>

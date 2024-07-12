@@ -5,14 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn.window"
         mc:Ignorable="d"
-        Title="ErrorWindow" Height="400" Width="400">
+        Title="ErrorWindow" Height="400" Width="400" Background="{StaticResource BackGroundBrush}">
     <Grid>
-        <Grid.Background>
-            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="0.3">
-                <GradientStop Color="#4facfe" Offset="0.0" />
-                <GradientStop Color="#00f2fe" Offset="1.0" />
-            </LinearGradientBrush>
-        </Grid.Background>
+        
         <StackPanel Orientation="Vertical">
             <TextBlock FontSize="26" HorizontalAlignment="Center" Margin="5">啊，出错了</TextBlock>
             <TextBlock x:Name="txtblockErrorDesp" Margin="5">错误名称:</TextBlock>
