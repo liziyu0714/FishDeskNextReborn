@@ -25,7 +25,7 @@ namespace FishDeskNextReborn
             else
             {
                 mutexHelper.CreateMutex();
-                DesktopManager.InitDesktops();
+                DesktopManager.InitDesktops(["FDNR1","FDNR2","FDNR3","FDNR4","FDNR5"]);
             }
         }
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

@@ -16,7 +16,10 @@
                     <DataGridTemplateColumn Header="操作">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Click="Button_Click">删除</Button>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button x:Name="DeleteBtn">删除</Button>
+                                    <Button x:Name="ToggleBtn">切换至</Button>
+                                </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

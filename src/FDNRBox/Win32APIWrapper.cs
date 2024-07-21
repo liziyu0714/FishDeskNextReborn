@@ -145,6 +145,10 @@ namespace FDNRBox
         public static extern bool SwitchDesktop(IntPtr hDesktop);
         [DllImport("user32.dll")]
         public static extern IntPtr GetThreadDesktop(int dwThreadId);
+        [DllImport("user32.dll")]
+        public static extern bool GetUserObjectInformation(IntPtr hObj,int nIndex,ref uint pvInfo,uint nLength,ref int[] lpnLengthNeeded);
+        #endregion
+        #region 其他
         [DllImport("Kernel32.dll")]
         public static extern int GetCurrentThreadId();
 
@@ -165,17 +169,10 @@ namespace FDNRBox
                                                              ref STARTUPINFO lpStartupInfo,
                                                              ref PROCESS_INFORMATION lpProcessInformation
                                                              );
-
-
-
-        #endregion
-
-
-
-
-
         [DllImport("Kernel32.dll")]
         public static extern int GetLastError();
+        #endregion
+
         #endregion
 
         #region 包装好的函数
@@ -199,6 +196,13 @@ namespace FDNRBox
                 throw new Exception($"GetLastError return {lastError}");
             return retValue;
         }
+        public unsafe static string GetDesktopName(IntPtr hDesktop)
+        {
+            IntPtr pvInfo = IntPtr.Zero;
+            throw new NotImplementedException();
+            
+        }
+
         #endregion
     }
 }

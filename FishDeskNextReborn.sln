@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FishDeskNextReborn", "src\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FDNRAPI", "src\FDNRBox\FDNRAPI.csproj", "{2961AABE-BE56-4537-9B57-B2BCDA64FE21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FDNRSideHelper", "src\FDNRSideHelper\FDNRSideHelper.csproj", "{7E77544B-FA6C-4AB3-96C6-82F0081DC401}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,14 @@ Global
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|x64.ActiveCfg = Release|Any CPU
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|x64.Build.0 = Release|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Debug|x64.Build.0 = Debug|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Release|x64.ActiveCfg = Release|Any CPU
+		{7E77544B-FA6C-4AB3-96C6-82F0081DC401}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

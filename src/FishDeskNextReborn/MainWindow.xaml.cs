@@ -1,6 +1,7 @@
 ﻿using FDNRBox;
 using FishDeskNextReborn.Helpers;
 using FishDeskNextReborn.window;
+using HandyControl.Controls;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Interop;
@@ -86,6 +87,7 @@ namespace FishDeskNextReborn
                 ShowDesk();
                 killlistHelper.KILL();
             }
+            else DesktopManager.NextDesktop();
         }
         public void PreviousDesktop()
         {
@@ -96,13 +98,22 @@ namespace FishDeskNextReborn
                 ShowDesk();
                 killlistHelper.KILL();
             }
+            else DesktopManager.PrevDesktop();
         }
 
         public void ChangeToggleMode()
         {
             if (togglemode == ToggleDesktopMode.TaskView)
+            {
                 togglemode = ToggleDesktopMode.Win32;
-            else togglemode = ToggleDesktopMode.TaskView;
+                Growl.InfoGlobal("已切换到Win32模式");
+            }
+
+            else
+            {
+                togglemode = ToggleDesktopMode.TaskView;
+                Growl.InfoGlobal("已切换到Taskview模式");
+            }
         }
     }
 }
