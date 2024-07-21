@@ -1,18 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace FishDeskNextReborn
 {
@@ -27,7 +13,7 @@ namespace FishDeskNextReborn
             InitializeComponent();
 
             this.Loaded += (sender, e) => LoadList();
-            this.Closed += (sender,e) => SaveList();
+            this.Closed += (sender, e) => SaveList();
             this.AddBtn.Click += (sender, e) => AddProg();
             this.LoadBtn.Click += (sender, e) => LoadList();
             this.ProgListTxtbox.LostFocus += (sender, e) => SaveList();
@@ -65,7 +51,7 @@ namespace FishDeskNextReborn
         private void OpenProcessWindowBtn_Click(object sender, RoutedEventArgs e)
         {
             ProcessNames processNames = new ProcessNames();
-            processNames.ShowDialog(); 
+            processNames.ShowDialog();
         }
 
     }

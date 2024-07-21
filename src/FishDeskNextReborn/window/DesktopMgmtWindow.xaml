@@ -12,7 +12,15 @@
         <StackPanel Orientation="Vertical">
             <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}" Margin="10">桌面管理器</TextBlock>
             <DataGrid x:Name="DesktopsDataGrid" AutoGenerateColumns="True">
-                
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="操作">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="Button_Click">删除</Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
             </DataGrid>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button IsEnabled="True" Content="刷新" Margin="5" Style="{StaticResource ButtonSuccess}"/>

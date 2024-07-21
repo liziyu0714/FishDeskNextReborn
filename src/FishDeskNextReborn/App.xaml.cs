@@ -1,13 +1,7 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Runtime.InteropServices;
-using System.Windows;
-using System.Diagnostics;
-using System.ComponentModel;
-using System.IO;
-using FishDeskNextReborn.window;
+﻿using FDNRBox;
 using FishDeskNextReborn.Helpers;
-using FDNRBox;
+using FishDeskNextReborn.window;
+using System.Windows;
 
 namespace FishDeskNextReborn
 {
@@ -22,7 +16,7 @@ namespace FishDeskNextReborn
             Register.RegistAll();
             LaunchArgs = e.Args;
             //已存在实例
-            if(mutexHelper.Detect())
+            if (mutexHelper.Detect())
             {
                 argResolver.Resolve(e.Args);
                 this.Shutdown();

@@ -2,67 +2,30 @@
 {
     public class WindowsDesktop
     {
-        private IntPtr hDesktop = IntPtr.Zero;
-        private string lpszDesktop = "";
-        private bool isOpen = false;
 
-        public IntPtr DesktopPointer { get => hDesktop;  }
-        public string DesktopName { get => lpszDesktop; }
-        public bool IsOpen { get => isOpen;}
+        private IntPtr desktopPointer;
+        private string desktopName;
+        private int desktopId;
 
-        public WindowsDesktop()
-        { 
-            hDesktop = new IntPtr(0);
-            lpszDesktop = "";
-            isOpen = false;
-        }
+        public nint DesktopPointer { get => desktopPointer; set => desktopPointer = value; }
+        public string DesktopName { get => desktopName; set => desktopName = value; }
+        public int DesktopId { get => desktopId; set => desktopId = value; }
 
-        public WindowsDesktop(string name)
+        public WindowsDesktop(string name, int id)
         {
-            OpenDesktopByName(name);
-        }
-        public void OpenDesktopByName(string name)
-        {
-            hDesktop = Win32APIWrapper.OpenDesktop(name, 0, true, (long)Win32APIWrapper.ACCESS_MASK.GENERIC_ALL);
-            if (hDesktop != IntPtr.Zero)
-            {
-                isOpen = true;
-                lpszDesktop = name;
-            }
-            else
-            {
-                hDesktop = Win32APIWrapper.CreateDesktop(name, IntPtr.Zero, IntPtr.Zero, 0, (long)Win32APIWrapper.ACCESS_MASK.GENERIC_ALL, IntPtr.Zero);
-                if (hDesktop != IntPtr.Zero)
-                {
-                    isOpen = true;
-                    lpszDesktop = name;
-                }
-                else    throw new Exception("Operation Failed");
-            }
-        }
-        
-        
-        public void OpenDesktopByPointer(IntPtr pointer)
-        {
-
+            desktopPointer = Win32APIWrapper.CreateDesktop(name, IntPtr.Zero, IntPtr.Zero, 0, (long)Win32APIWrapper.DESKTOP_ACCESS_MASK.GENERIC_ALL, IntPtr.Zero);
+            desktopName = name;
+            desktopId = id;
         }
 
         public void Close()
         {
-            if(isOpen)
-            {
-                Win32APIWrapper.CloseDesktop(hDesktop);
-                isOpen = false;
-            }
-
+            Win32APIWrapper.CloseDesktop(DesktopPointer);
         }
 
         public void SwitchToThis()
         {
-            if(isOpen)
-            {
-                Win32APIWrapper.SwitchDesktop(hDesktop);
-            }
+            Win32APIWrapper.SwitchDesktop(DesktopPointer);
         }
     }
 }

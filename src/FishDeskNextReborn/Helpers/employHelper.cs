@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Principal;
+﻿using IWshRuntimeLibrary;
 using System.Diagnostics;
-using System.Windows;
 using System.IO;
-using IWshRuntimeLibrary;
+using System.Security.Principal;
+using System.Windows;
 
 namespace FishDeskNextReborn
 {
@@ -28,12 +23,12 @@ namespace FishDeskNextReborn
                 }
             }
             else MessageBox.Show("正在使用管理员权限部署", "FNDR", MessageBoxButton.OK, MessageBoxImage.Information);
-            
-            if(MessageBox.Show("要将应用程序复制到APPDATA中还是保留在此位置?如果要进行复制,选择\"是\"。","FDNR",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+
+            if (MessageBox.Show("要将应用程序复制到APPDATA中还是保留在此位置?如果要进行复制,选择\"是\"。", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
 
             }
-            if(MessageBox.Show("要在开始菜单中生成快捷方式，还是仅在当前文件夹下生成?如果要在开始菜单中生成,选择\"是\"","FDNR",MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("要在开始菜单中生成快捷方式，还是仅在当前文件夹下生成?如果要在开始菜单中生成,选择\"是\"", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
 
             }
@@ -67,10 +62,10 @@ namespace FishDeskNextReborn
         {
             FileInfo file = new FileInfo(Environment.ProcessPath!);
             DirectoryInfo directoryInfo = file.Directory!;
-            if(Directory.Exists(dataFolder))
+            if (Directory.Exists(dataFolder))
             {
                 MessageBox.Show("正在删除旧的部署文件，按\"确定\"继续");
-                Directory.Delete(dataFolder, true );
+                Directory.Delete(dataFolder, true);
                 MessageBox.Show("旧的部署文件已清除，按\"确定\"继续");
             }
             Directory.CreateDirectory(dataFolder);
@@ -81,9 +76,9 @@ namespace FishDeskNextReborn
         }
         public static void GenerateLinks()
         {
-            
+
         }
-        public static void CreateShortcut(string directory, string shortcutName, string targetPath,string description = null, string iconLocation = null)
+        public static void CreateShortcut(string directory, string shortcutName, string targetPath, string? description = null, string? iconLocation = null)
         {
             if (!System.IO.Directory.Exists(directory))
             {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 namespace FishDeskNextReborn.Helpers
 {
@@ -16,12 +11,12 @@ namespace FishDeskNextReborn.Helpers
         public const int HWND_BROADCAST = 0xffff;
 
         public delegate int BroadcastDelegate(MainWindow sender);
-        public static Dictionary<string,BroadcastDelegate> broadcastMessages =new Dictionary<string,BroadcastDelegate>();
-        public static Dictionary<string,int> MessagePtr = new Dictionary<string,int>();
+        public static Dictionary<string, BroadcastDelegate> broadcastMessages = new Dictionary<string, BroadcastDelegate>();
+        public static Dictionary<string, int> MessagePtr = new Dictionary<string, int>();
 
         public static void Broadcast(string msg)
         {
-            PostMessage(HWND_BROADCAST,MessagePtr[msg],IntPtr.Zero,IntPtr.Zero);
+            PostMessage(HWND_BROADCAST, MessagePtr[msg], IntPtr.Zero, IntPtr.Zero);
         }
         public static void Regist(string message, BroadcastDelegate broadcastDelegate)
         {
@@ -31,11 +26,11 @@ namespace FishDeskNextReborn.Helpers
 
         public static int ProcessMessage(int messagePtr, FishDeskNextReborn.MainWindow sender)
         {
-            if(MessagePtr.ContainsValue(messagePtr))
+            if (MessagePtr.ContainsValue(messagePtr))
             {
-                foreach(var message in MessagePtr)
+                foreach (var message in MessagePtr)
                 {
-                    if(message.Value == messagePtr)
+                    if (message.Value == messagePtr)
                     {
                         return broadcastMessages[message.Key].Invoke(sender);
                     }

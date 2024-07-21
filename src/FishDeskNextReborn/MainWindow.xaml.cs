@@ -1,23 +1,10 @@
-﻿using System.Runtime.InteropServices;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Shell;
-using System.IO;
-using System.Diagnostics;
-using System.Security.Policy;
-using HandyControl.Controls;
-using System.Windows.Interop;
-using FishDeskNextReborn.window;
-using static FishDeskNextReborn.Helpers.taskviewToggler;
+﻿using FDNRBox;
 using FishDeskNextReborn.Helpers;
+using FishDeskNextReborn.window;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Interop;
+using static FishDeskNextReborn.Helpers.taskviewToggler;
 
 namespace FishDeskNextReborn
 {
@@ -44,7 +31,7 @@ namespace FishDeskNextReborn
             //挂载事件
             RegistEvents();
 
-            this.Loaded += (object sender, RoutedEventArgs e) => 
+            this.Loaded += (object sender, RoutedEventArgs e) =>
             {
                 //解析参数
                 if (App.LaunchArgs != null && App.LaunchArgs.Length > 0)
@@ -52,8 +39,9 @@ namespace FishDeskNextReborn
                     argResolver.Resolve(App.LaunchArgs);
                     this.Visibility = Visibility.Hidden;
                 }
+
             };
-            
+
 
         }
         protected override void OnSourceInitialized(EventArgs e)
@@ -86,12 +74,12 @@ namespace FishDeskNextReborn
 
         private void Test()
         {
-            
+            DesktopManager.SwitchToDesktop("FDNR1");
         }
 
         public void NextDesktop()
         {
-            if(togglemode == ToggleDesktopMode.TaskView)
+            if (togglemode == ToggleDesktopMode.TaskView)
             {
                 ShowDesk();
                 NextDesk();
@@ -101,7 +89,7 @@ namespace FishDeskNextReborn
         }
         public void PreviousDesktop()
         {
-            if(togglemode == ToggleDesktopMode.TaskView)
+            if (togglemode == ToggleDesktopMode.TaskView)
             {
                 ShowDesk();
                 PrevDesk();
