@@ -11,6 +11,8 @@ namespace FDNRBox
 
         public static int NowDesktop = 0;
 
+        public static bool Inited = false;
+
         public static WindowsDesktop? GetInputDesktop()
         {
             WindowsDesktop windowsDesktop;
@@ -33,11 +35,15 @@ namespace FDNRBox
 
         public static void InitDesktops(List<string> DesktopNames)
         {
-            RefreshDesktops();
-            foreach (string desktopName in DesktopNames)
+            if(!Inited)
             {
-                InitNormalDesktop(desktopName);
+                RefreshDesktops();
+                foreach (string desktopName in DesktopNames)
+                {
+                    InitNormalDesktop(desktopName);
+                }
             }
+            
         }
 
         public static void DestroyDesktops()

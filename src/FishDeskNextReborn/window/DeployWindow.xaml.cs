@@ -70,6 +70,7 @@ namespace FishDeskNextReborn.window
             CreateShortcut(path.DirectoryName!, "FDNR Previous", path.FullName, "Go to previous desktop", path.FullName, "-P");
             CreateShortcut(path.DirectoryName!, "FDNR Deploy", path.FullName, "Open FDNR Deploy Tool", path.FullName, "-D");
             CreateShortcut(path.DirectoryName!, "FDNR Config", path.FullName, "Open FDNR Config", path.FullName, "");
+            CreateShortcut(path.DirectoryName!, "FDNR Silent Start", path.FullName, "Startup FDNR without window", path.FullName, "--Silent");
             Growl.Info("部署快捷方式完成");
         }
     }

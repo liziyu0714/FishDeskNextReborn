@@ -106,6 +106,7 @@ namespace FishDeskNextReborn
             if (togglemode == ToggleDesktopMode.TaskView)
             {
                 togglemode = ToggleDesktopMode.Win32;
+                DesktopManager.InitDesktops(["FDNR1", "FDNR2", "FDNR3", "FDNR4", "FDNR5"]);
                 Growl.InfoGlobal("已切换到Win32模式");
             }
 

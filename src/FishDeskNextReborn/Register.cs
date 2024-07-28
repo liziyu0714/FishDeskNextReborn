@@ -13,6 +13,7 @@ namespace FishDeskNextReborn
         private static void RegistMessage()
         {
             broadcastHelper.Regist("Show window", (sender) => { sender.Visibility = System.Windows.Visibility.Visible; return 0; });
+            broadcastHelper.Regist("Hide window", (sender) => { sender.Visibility = System.Windows.Visibility.Hidden; return 0; });
             broadcastHelper.Regist("Previous Desktop", (sender) => { sender.PreviousDesktop(); return 0; });
             broadcastHelper.Regist("Next Desktop", (sender) => { sender.NextDesktop(); return 0; });
             broadcastHelper.Regist("Open Deploy", (sender) => { sender.deployWindow.ShowDialog(); return 0; });
@@ -28,6 +29,7 @@ namespace FishDeskNextReborn
             argResolver.Register("-S", () => { broadcastHelper.Broadcast("Show window"); });
             argResolver.Register("-T", () => { broadcastHelper.Broadcast("Toggle Mode"); });
             argResolver.Register("--OpenDesktopMgmt", () => { });
+            argResolver.Register("--Silent", () => { broadcastHelper.Broadcast("Hide window"); });
         }
     }
 }
