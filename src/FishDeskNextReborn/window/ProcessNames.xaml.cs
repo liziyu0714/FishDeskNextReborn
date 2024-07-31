@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Windows;
 
 namespace FishDeskNextReborn
 {
     /// <summary>
-    /// ProcessNames.xaml 的交互逻辑
+    /// ProcessNames.xaml的交互逻辑
     /// </summary>
     public partial class ProcessNames : Window
     {

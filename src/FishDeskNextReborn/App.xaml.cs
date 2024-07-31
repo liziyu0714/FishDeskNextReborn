@@ -1,4 +1,4 @@
-﻿using FDNRBox;
+using FDNRBox;
 using FishDeskNextReborn.Helpers;
 using FishDeskNextReborn.window;
 using System.Windows;
@@ -6,7 +6,7 @@ using System.Windows;
 namespace FishDeskNextReborn
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// App.xaml的交互逻辑
     /// </summary>
     public partial class App : Application
     {

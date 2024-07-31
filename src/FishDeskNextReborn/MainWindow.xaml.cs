@@ -1,4 +1,4 @@
-﻿using FDNRBox;
+using FDNRBox;
 using FishDeskNextReborn.Helpers;
 using FishDeskNextReborn.window;
 using HandyControl.Controls;
@@ -10,7 +10,7 @@ using static FishDeskNextReborn.Helpers.taskviewToggler;
 namespace FishDeskNextReborn
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// MainWindow.xaml的交互逻辑
     /// </summary>
     public partial class MainWindow : System.Windows.Window
     {
@@ -107,13 +107,13 @@ namespace FishDeskNextReborn
             {
                 togglemode = ToggleDesktopMode.Win32;
                 DesktopManager.InitDesktops(["FDNR1", "FDNR2", "FDNR3", "FDNR4", "FDNR5"]);
-                Growl.InfoGlobal("已切换到Win32模式");
+                Growl.InfoGlobal("已切换到Win32模式。");
             }
 
             else
             {
                 togglemode = ToggleDesktopMode.TaskView;
-                Growl.InfoGlobal("已切换到Taskview模式");
+                Growl.InfoGlobal("已切换到Taskview模式。");
             }
         }
     }

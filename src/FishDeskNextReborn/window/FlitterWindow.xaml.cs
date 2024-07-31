@@ -1,9 +1,9 @@
-﻿using System.Windows;
+using System.Windows;
 
 namespace FishDeskNextReborn
 {
     /// <summary>
-    /// FlitterWindow.xaml 的交互逻辑
+    /// FlitterWindow.xaml的交互逻辑
     /// </summary>
     public partial class FlitterWindow : Window
     {

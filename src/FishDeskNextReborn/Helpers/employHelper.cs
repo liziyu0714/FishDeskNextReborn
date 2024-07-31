@@ -1,4 +1,4 @@
-﻿using IWshRuntimeLibrary;
+using IWshRuntimeLibrary;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Principal;
@@ -6,29 +6,29 @@ using System.Windows;
 
 namespace FishDeskNextReborn
 {
-    //什么时候高兴了再来写吧
+    //以下功能尚未完成（什么时候高兴了再来写吧）。
     public class employHelper
     {
         public static string dataFolder = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "FishDeskNextReborn\\App");
         public static void EmployApplication()
         {
-            MessageBox.Show("FDNR 部署工具(BuildIn),按\"确定\"继续");
+            MessageBox.Show("这是FDNR部署工具。单击“确定”以继续。");
 
             WindowsPrincipal windowsPrincipal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
             if (!windowsPrincipal.IsInRole(WindowsBuiltInRole.Administrator))
             {
-                if (MessageBox.Show("要提升权限吗?", "FNDR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                if (MessageBox.Show("是否提升权限?", "FNDR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
                 {
                     RestartAsAdmin();
                 }
             }
-            else MessageBox.Show("正在使用管理员权限部署", "FNDR", MessageBoxButton.OK, MessageBoxImage.Information);
+            else MessageBox.Show("正在以管理员身份部署……", "FNDR", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            if (MessageBox.Show("要将应用程序复制到APPDATA中还是保留在此位置?如果要进行复制,选择\"是\"。", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("是否将应用程序复制至%APPDATA%中？", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
 
             }
-            if (MessageBox.Show("要在开始菜单中生成快捷方式，还是仅在当前文件夹下生成?如果要在开始菜单中生成,选择\"是\"", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (MessageBox.Show("是否同时在开始菜单中生成快捷方式？", "FDNR", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
 
             }
@@ -53,7 +53,7 @@ namespace FishDeskNextReborn
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"需要管理员权限!{ex.Message}");
+                    MessageBox.Show($"此操作需要管理员权限。{ex.Message}");
                 }
                 Application.Current.Shutdown();
             }
@@ -64,14 +64,14 @@ namespace FishDeskNextReborn
             DirectoryInfo directoryInfo = file.Directory!;
             if (Directory.Exists(dataFolder))
             {
-                MessageBox.Show("正在删除旧的部署文件，按\"确定\"继续");
+                MessageBox.Show("是否删除旧部署文件？");
                 Directory.Delete(dataFolder, true);
-                MessageBox.Show("旧的部署文件已清除，按\"确定\"继续");
+                MessageBox.Show("已删除旧部署文件。");
             }
             Directory.CreateDirectory(dataFolder);
 
             Directory.Move(directoryInfo.FullName, dataFolder);
-            MessageBox.Show("已部署文件至APPDATA，按\"确定\"继续");
+            MessageBox.Show("已部署文件至%APPDATA%。");
 
         }
         public static void GenerateLinks()

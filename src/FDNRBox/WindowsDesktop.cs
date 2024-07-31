@@ -1,4 +1,4 @@
-﻿namespace FDNRBox
+namespace FDNRBox
 {
     public class WindowsDesktop
     {
