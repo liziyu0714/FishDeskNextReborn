@@ -5,10 +5,12 @@
 > 写更多Next，不止于切换桌面。
 > ——liziyu0714
 > 
-> 我首先反驳“OOB不能为任务所驱动”的刁钻说法；譬如FDNR便是个有利反驳。
+> 我首先反驳OOB不能为任务所驱动的刁钻说法；譬如FDNR便是个有力的“反驳的反驳”。
 > ——幸草_Tarikko-ScetayhChan
 
 本项目将在未来被重新命名——正因为不只于切换桌面。
+
+![JumpList（跳转列表）](screenshot.png)
 
 ## 前言
 
@@ -26,12 +28,17 @@
 
 基于FDN，我开发了FishDeskNext: Reborn，并加入了JumpList（跳转列表）功能。当应用程序图标被固定到任务栏时，右击（即触控下的长按）该图标即可唤出跳转列表。用户可以点按菜单中的按钮切换回上一个桌面，继续你的工作。
 
-## 编译安装
+## 编译
 
-先决条件：
+### 本机编译
 
-- 操作系统环境：Windows 7及以上（[x86](https://www.microsoft.com/zh-cn/software-download/)、[x64](https://www.microsoft.com/zh-cn/software-download/)或ARM64架构）
+#### 先决条件
+
+- 架构：x86、x64或ARM64
+- 操作系统环境：Windows 7及以上
 - 编译环境：.NET 8.0 SDK([x86](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.303-windows-x86-installer)、[x64](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.303-windows-x64-installer)或[ARM64](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/sdk-8.0.303-windows-arm64-installer)架构)
+
+#### 准备与发布
 
 使用[Git](https://registry.npmmirror.com/-/binary/git-for-windows/v2.46.0.windows.1/Git-2.46.0-64-bit.exe)克隆本仓库或下载解压[`.zip`文件](https://github.com/liziyu0714/FishDeskNextReborn/archive/refs/heads/master.zip)：
 
@@ -51,23 +58,62 @@ cd .\FishDeskNextReborn\
 dotnet publish
 ```
 
-编译产物位于`.\src\FishDeskNextReborn\bin\Release\net8.0-windows\`下。
+发布产物位于`.\src\FishDeskNextReborn\bin\Release\net8.0-windows\`下。
 
-将所有编译产物复制到合适的地方，例如`~\Documents\FDNR\`：
+### 交叉编译
 
-```powershell
-# 创建~\Documents\FDNR目录
-mkdir ~\Documents\FDNR\
+#### 先决条件
 
-# 将所有编译产物复制到~\Documents\FDNR目录下
-copy .\src\FishDeskNextReborn\bin\Release\net8.0-windows\publish\* ~\Documents\FDNR\
+主机平台：
 
-# 切换至~\Documents\FDNR目录下
-cd ~\Documents\FDNR\
+- 架构：x86、x64或ARM64
+- 操作系统环境：Windows 7及以上、GNU/Linux发行版或macOS Monterey 12.0及以上
+- 编译环境：[.NET 8.0 SDK](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)和.[NET 8.0 Runtime](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 
-# 检查目录内容
-ls
+目标平台：
+
+- 架构：x86、x64或ARM64
+- 操作系统环境：Windows 7及以上
+
+#### 准备与发布
+
+使用[Git](https://registry.npmmirror.com/-/binary/git-for-windows/v2.46.0.windows.1/Git-2.46.0-64-bit.exe)克隆本仓库或下载解压[`.zip`文件](https://github.com/liziyu0714/FishDeskNextReborn/archive/refs/heads/master.zip)：
+
+```shell
+git clone https://github.com/liziyu0714/FishDeskNextReborn.git
 ```
+
+切换路径：
+
+```shell
+cd ./FishDeskNextReborn/
+```
+
+为x86架构发布产物：
+
+```shell
+dotnet publish --arch x86 --os win
+```
+
+发布产物位于`./src/FishDeskNextReborn/bin/Release/net8.0-windows/win-x86/`下。
+
+为x64架构发布产物：
+
+```shell
+dotnet publish --arch x64 --os win
+```
+
+发布产物位于`./src/FishDeskNextReborn/bin/Release/net8.0-windows/win-x64/`下。
+
+为ARM64架构发布产物：
+
+```shell
+dotnet publish --arch arm64 --os win
+```
+
+发布产物位于`./src/FishDeskNextReborn/bin/Release/net8.0-windows/win-arm64/`下。
+
+复制发布产物到目标平台即可。
 
 ## 用法
 
@@ -94,8 +140,6 @@ ls
 单击任务栏的FDNR Next图标，即可切换到下一个桌面。
 
 长按任务栏的FDNR Next图标，即可呼出跳转列表。单击“Move to previous desktop”，即可切换到上一个桌面。
-
-![JumpList（跳转列表）](screenshot.png)
 
 ### CLI
 
@@ -125,16 +169,17 @@ ls
 
 ## 测试
 
-作者本人在7代i5、4 GB RAM硬件上、Windows 10 1709、21H2、23H2 on x64环境下进行了测试。
+作者本人在7代i5、4 GB RAM硬件上、Windows 10 1709、21H2、23H2 on x64环境下进行了编译和测试。
 
-[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)在Apple M2、4 GB RAM硬件上的Windows 11 23H2 on ARM64虚拟机环境下进行了测试。
+[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)在Apple M2、8 GB RAM硬件上的macOS Sequoia 15.0 beta on ARM64环境下进行了编译和测试，同时在Windows 11 23H2 on ARM64虚拟机环境下进行了编译和测试。
 
-编译安装和测试未报告任何问题。
+以上均未报告任何问题。
 
 ## 展望
 
 - [x] 单实例功能
 - [x] 部署工具
+- [x] 交叉编译
 - [ ] 更改配色
 - [ ] 切换用户（Next Account）
 - [ ] 切换会话（Next Session）
