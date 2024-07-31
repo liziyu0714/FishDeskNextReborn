@@ -12,12 +12,12 @@
        
         <StackPanel Orientation="Vertical">
             <TextBlock Margin="5" FontSize="20">过滤管理器</TextBlock>
-            <TextBlock Margin="10">某些应用程序存在单实例启动的行为，在其他桌面启动时，Windows Shell将会自动切换桌面。</TextBlock>
-            <TextBlock Margin="10">过滤器会尝试杀死以下注册的程序。</TextBlock>
-            <TextBlock Margin="10">列表中的每一行填写一个程序。</TextBlock>
+            <TextBlock Margin="10 5 5 5">某些应用程序存在单实例启动的行为，在其他桌面启动时，Windows Shell将会自动切换桌面。</TextBlock>
+            <TextBlock Margin="10 5 5 5">过滤器会尝试杀死以下注册的程序。</TextBlock>
+            <TextBlock Margin="10 5 5 5">列表中的每一行填写一个程序。</TextBlock>
             <TextBox x:Name="ProgListTxtbox" TextWrapping="Wrap" Height="160" Margin="10"></TextBox>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="LoadBtn" Margin="15">刷新</Button>
+                <Button x:Name="LoadBtn" Margin="15 5 5 5">刷新</Button>
                 <TextBox x:Name="InputProgTxtbox" Width="180" Margin="5"></TextBox>
                 <Button x:Name="AddBtn" Margin="5">添加</Button>
             </StackPanel>
