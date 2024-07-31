@@ -1,4 +1,4 @@
-﻿<Window x:Class="FishDeskNextReborn.MainWindow"
+<Window x:Class="FishDeskNextReborn.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -20,8 +20,8 @@
                     <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong">关闭窗口</Button>
                 </StackPanel>
 
-                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">支持开源和开放的软件!自豪地采用GPL v3许可证。</TextBlock>
-                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">开源地址:
+                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">支持开源和开放的软件！本程序自豪地采用GPLv3.0许可证。</TextBlock>
+                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">开源地址：
                     <Hyperlink x:Name="linkOpenHyperLink" NavigateUri="https://github.com/liziyu0714/FishDeskNextReborn">https://github.com/liziyu0714/FishDeskNextReborn</Hyperlink>
                 </TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

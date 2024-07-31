@@ -1,4 +1,4 @@
-﻿using FishDeskNextReborn.Helpers;
+using FishDeskNextReborn.Helpers;
 
 namespace FishDeskNextReborn
 {

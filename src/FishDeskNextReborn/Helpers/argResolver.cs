@@ -1,4 +1,4 @@
-﻿namespace FishDeskNextReborn.Helpers
+namespace FishDeskNextReborn.Helpers
 {
     public class argResolver
     {

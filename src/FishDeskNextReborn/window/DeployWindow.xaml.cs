@@ -1,4 +1,4 @@
-﻿using HandyControl.Controls;
+using HandyControl.Controls;
 using System.Diagnostics;
 using System.IO;
 using System.Security.Principal;
@@ -7,7 +7,7 @@ using System.Windows;
 namespace FishDeskNextReborn.window
 {
     /// <summary>
-    /// DeployWindow.xaml 的交互逻辑
+    /// DeployWindow.xaml的交互逻辑
     /// </summary>
     public partial class DeployWindow : System.Windows.Window
     {
@@ -34,7 +34,7 @@ namespace FishDeskNextReborn.window
                 }
                 catch (Exception ex)
                 {
-                    HandyControl.Controls.MessageBox.Show($"需要管理员权限!{ex.Message}");
+                    HandyControl.Controls.MessageBox.Show($"此操作需要管理员权限。{ex.Message}");
                 }
                 Application.Current.Shutdown();
             }
@@ -48,14 +48,14 @@ namespace FishDeskNextReborn.window
 
             string shortcutPath = System.IO.Path.Combine(directory, string.Format("{0}.lnk", shortcutName));
             IWshRuntimeLibrary.WshShell shell = new IWshRuntimeLibrary.WshShell();
-            IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(shortcutPath);//创建快捷方式对象
-            shortcut.TargetPath = targetPath;//指定目标路径
-            shortcut.WorkingDirectory = System.IO.Path.GetDirectoryName(targetPath);//设置起始位置
-            shortcut.WindowStyle = 1;//设置运行方式，默认为常规窗口
-            shortcut.Description = description;//设置备注
-            shortcut.IconLocation = string.IsNullOrWhiteSpace(iconLocation) ? targetPath : iconLocation;//设置图标路径
+            IWshRuntimeLibrary.IWshShortcut shortcut = (IWshRuntimeLibrary.IWshShortcut)shell.CreateShortcut(shortcutPath); //创建快捷方式对象
+            shortcut.TargetPath = targetPath;                                                                               //指定目标路径
+            shortcut.WorkingDirectory = System.IO.Path.GetDirectoryName(targetPath);                                        //设置起始位置
+            shortcut.WindowStyle = 1;                                                                                       //设置运行方式，默认为常规窗口
+            shortcut.Description = description;                                                                             //设置备注
+            shortcut.IconLocation = string.IsNullOrWhiteSpace(iconLocation) ? targetPath : iconLocation;                    //设置图标路径
             shortcut.Arguments = arguments;
-            shortcut.Save();//保存快捷方式
+            shortcut.Save();                                                                                                //保存快捷方式
         }
 
         private void RunAsAdminBtn_Click(object sender, RoutedEventArgs e)
@@ -71,7 +71,7 @@ namespace FishDeskNextReborn.window
             CreateShortcut(path.DirectoryName!, "FDNR Deploy", path.FullName, "Open FDNR Deploy Tool", path.FullName, "-D");
             CreateShortcut(path.DirectoryName!, "FDNR Config", path.FullName, "Open FDNR Config", path.FullName, "");
             CreateShortcut(path.DirectoryName!, "FDNR Silent Start", path.FullName, "Startup FDNR without window", path.FullName, "--Silent");
-            Growl.Info("部署快捷方式完成");
+            Growl.Info("已部署快捷方式。");
         }
     }
 }

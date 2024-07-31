@@ -1,10 +1,10 @@
-﻿using FDNRBox;
+using FDNRBox;
 using System.Windows;
 
 namespace FishDeskNextReborn.window
 {
     /// <summary>
-    /// DesktopMgmtWindow.xaml 的交互逻辑
+    /// DesktopMgmtWindow.xaml的交互逻辑
     /// </summary>
     public partial class DesktopMgmtWindow : Window
     {

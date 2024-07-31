@@ -1,4 +1,4 @@
-﻿using System.Windows;
+using System.Windows;
 using static FDNRBox.Win32APIWrapper;
 
 namespace FDNRBox

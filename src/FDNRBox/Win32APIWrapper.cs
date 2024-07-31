@@ -4,16 +4,16 @@ namespace FDNRBox
 {
     public static partial class Win32APIWrapper
     {
-        #region Ò»Ğ©³£Á¿
+        #region å¸¸é‡
         public static string ExplorerPath = @"C:\\Windows\\explorer.exe";
         #endregion
 
-        #region Ô­ÉúÎ¯ÍĞ
+        #region åŸç”Ÿå§”æ‰˜
         public delegate bool EnumDesktopProc(string lpszDesktop, int lParam);
         public delegate bool EnumWindowsProc(IntPtr hwnd, int lParam);
         #endregion
 
-        #region Ô­Éú½á¹¹ÓëÀà
+        #region åŸç”Ÿç»“æ„ä¸ç±»
         [Flags]
         public enum CreateProcessFlags : uint
         {
@@ -117,8 +117,8 @@ namespace FDNRBox
 
         #endregion
 
-        #region Ô­Éúº¯Êı
-        #region ×ÀÃæÏà¹Ø
+        #region åŸç”Ÿå‡½æ•°
+        #region æ¡Œé¢ç›¸å…³
         [LibraryImport("user32.dll", EntryPoint = "EnumDesktopsA")]
         [return: MarshalAs(UnmanagedType.Bool)]
         public static partial bool EnumDesktops(IntPtr hwinsta, EnumDesktopProc lpEnumFunc, int lParam);
@@ -148,7 +148,7 @@ namespace FDNRBox
         [DllImport("user32.dll")]
         public static extern bool GetUserObjectInformation(IntPtr hObj,int nIndex,ref uint pvInfo,uint nLength,ref int[] lpnLengthNeeded);
         #endregion
-        #region ÆäËû
+        #region å…¶ä»–
         [DllImport("Kernel32.dll")]
         public static extern int GetCurrentThreadId();
 
@@ -175,14 +175,14 @@ namespace FDNRBox
 
         #endregion
 
-        #region °ü×°ºÃµÄº¯Êı
+        #region åŒ…è£…å¥½çš„å‡½æ•°
 
         /// <summary>
-        /// ÔÚÖ¸¶¨µÄ×ÀÃæÉÏÆô¶¯½ø³Ì
+        /// åœ¨æŒ‡å®šæ¡Œé¢ä¸Šå¯åŠ¨è¿›ç¨‹
         /// </summary>
-        /// <param name="name">½ø³ÌµÄÍêÕûÂ·¾¶</param>
-        /// <param name="hDesktop">×ÀÃæµÄÃû³Æ</param>
-        /// <returns>½ø³ÌÊÇ·ñ³É¹¦Æô¶¯</returns>
+        /// <param name="name">è¿›ç¨‹çš„å®Œæ•´è·¯å¾„</param>
+        /// <param name="hDesktop">æ¡Œé¢åç§°</param>
+        /// <returns>è¿›ç¨‹æ˜¯å¦æˆåŠŸå¯åŠ¨</returns>
         public unsafe static bool StartProcessOnDesktop(string name, string hDesktop)
         {
             STARTUPINFO sTARTUPINFO = new STARTUPINFO();
