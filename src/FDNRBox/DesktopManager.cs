@@ -15,10 +15,9 @@ namespace FDNRBox
 
         public static WindowsDesktop? GetInputDesktop()
         {
-            WindowsDesktop windowsDesktop;
-            IntPtr inputDesk = OpenInputDesktop(0, true, 0);
-            
-            return null;
+            //WindowsDesktop windowsDesktop;
+            //IntPtr inputDesk = OpenInputDesktop(0, true, 0);
+            throw new NotImplementedException();
         }
 
         public static void RefreshDesktops()

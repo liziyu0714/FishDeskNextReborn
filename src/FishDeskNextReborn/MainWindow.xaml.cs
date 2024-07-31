@@ -1,5 +1,6 @@
 using FDNRBox;
 using FishDeskNextReborn.Helpers;
+using FishDeskNextReborn.Views;
 using FishDeskNextReborn.window;
 using HandyControl.Controls;
 using System.Diagnostics;
@@ -18,6 +19,7 @@ namespace FishDeskNextReborn
         public DesktopMgmtWindow desktopMgmtWindow = new DesktopMgmtWindow();
         public FlitterWindow flitterWindow = new FlitterWindow();
         public ToggleDesktopMode togglemode = ToggleDesktopMode.TaskView;
+        public ColorMgmt colorMgmtwindow = new();
 
         public enum ToggleDesktopMode
         {
@@ -71,6 +73,7 @@ namespace FishDeskNextReborn
             linkOpenHyperLink.Click += (e, sender) => { Process.Start(new ProcessStartInfo("cmd", $"/c start https://github.com/liziyu0714/FishDeskNextReborn") { CreateNoWindow = true }); };
             GoToFlitterBtn.Click += (e, sender) => { flitterWindow = new FlitterWindow(); flitterWindow.ShowDialog(); };
             DesktopMgmtOpenBtn.Click += (e, sender) => { desktopMgmtWindow = new DesktopMgmtWindow(); desktopMgmtWindow.ShowDialog(); };
+            ColorMgmtOpenBtn.Click += (e, sender) => { colorMgmtwindow = new(); colorMgmtwindow.ShowDialog(); };
         }
 
         private void Test()

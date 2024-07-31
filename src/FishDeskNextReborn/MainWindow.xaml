@@ -9,7 +9,7 @@
         AllowsTransparency="True"
         mc:Ignorable="d"
         Title="FishDeskNext:Reborn" Height="200" Width="800"
-        Background="{StaticResource BackGroundBrush}"
+        Background="{DynamicResource BackGroundBrush}"
         >
     <Grid>
         <Border CornerRadius="5" BorderThickness="2" BorderBrush="Black">
@@ -30,6 +30,7 @@
                         <Button x:Name="DebugBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">调试按钮</Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="ColorMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonDefault}" FontFamily="STZhongsong">打开配色管理器</Button>
                     <Button x:Name="DesktopMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong">打开桌面管理器</Button>
                 </StackPanel>
 

@@ -27,6 +27,9 @@
                 <GradientStop Color="#fbc2eb" Offset="0.0" />
                 <GradientStop Color="#a6c1ee" Offset="1.0" />
             </LinearGradientBrush>
+            <Brush x:Key="Tarikko">
+                #FFC878
+            </Brush>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -1,7 +1,11 @@
 using FDNRBox;
 using FishDeskNextReborn.Helpers;
+using FishDeskNextReborn.resource;
 using FishDeskNextReborn.window;
+using System.IO;
 using System.Windows;
+using System.Windows.Markup;
+using System.Windows.Media;
 
 namespace FishDeskNextReborn
 {
@@ -25,7 +29,18 @@ namespace FishDeskNextReborn
             else
             {
                 mutexHelper.CreateMutex();
+                ConfigHelper.Read();
+                this.Resources["BackGroundBrush"] = ReadAppBrush();
             }
+        }
+
+        private Brush ReadAppBrush()
+        {
+            if(!Directory.Exists(FDNRBackGround.CustomBrushesPath))
+                Directory.CreateDirectory(FDNRBackGround.CustomBrushesPath); 
+            if(!ConfigHelper.Config.ContainsKey("BackGroundBrush"))
+                ConfigHelper.Config["BackGroundBrush"] = resource.DefaultBackGroundBrush.DefaultBackGroundBrushList[0].BackGroundBrushString;
+            return (Brush)XamlReader.Parse(ConfigHelper.Config["BackGroundBrush"]);
         }
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
@@ -37,6 +52,8 @@ namespace FishDeskNextReborn
         private void Application_Exit(object sender, ExitEventArgs e)
         {
             mutexHelper.DestroyMutex();
+            ConfigHelper.Config["BackGroundBrush"] = XamlWriter.Save(this.Resources["BackGroundBrush"]);
+            ConfigHelper.Save();
         }
     }
 
