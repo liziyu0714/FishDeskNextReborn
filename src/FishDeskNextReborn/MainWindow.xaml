@@ -12,6 +12,11 @@
         Background="{DynamicResource BackGroundBrush}"
         >
     <Grid>
+        <Grid.Resources>
+            <ImageBrush x:Key="Test" Stretch="None">
+                
+            </ImageBrush>
+        </Grid.Resources>
         <Border CornerRadius="5" BorderThickness="2" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Margin="20">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">

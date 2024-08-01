@@ -78,7 +78,11 @@ namespace FishDeskNextReborn
 
         private void Test()
         {
-            DesktopManager.SwitchToDesktop("FDNR1");
+            desktopMgmtWindow.Show();
+            deployWindow.Show();
+            colorMgmtwindow.Show();
+            flitterWindow.Show();
+            //throw new NotImplementedException();
         }
 
         public void NextDesktop()

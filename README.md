@@ -10,7 +10,7 @@
 
 本项目将在未来被重新命名——正因为不只于切换桌面。
 
-![JumpList（跳转列表）](screenshot.png)
+![JumpList（跳转列表）](./docs/screenshot.png)
 
 ## 前言
 
@@ -118,6 +118,7 @@ dotnet publish --arch arm64 --os win
 ## 用法
 
 ### GUI
+![使用截图](./docs/JumpList_screenshot.png)
 
 右击（长按）`FishDeskNextReborn.exe`，单击“以管理员身份运行”。
 
@@ -180,14 +181,12 @@ dotnet publish --arch arm64 --os win
 - [x] 单实例功能
 - [x] 部署工具
 - [x] 交叉编译
-- [ ] 更改配色
+- [X] 更改配色 [文档](./docs/ColorMgmt.md)
 - [ ] 切换用户（Next Account）
 - [ ] 切换会话（Next Session）
 - [ ] 全屏动画
 - [ ] 自更新
 - [ ] 自绘图标（将来可能由[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)绘制）
-
-预计未来还会发布2个FDNR的Releases。
 
 ## 关于
 
