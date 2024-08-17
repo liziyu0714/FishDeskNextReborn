@@ -1,3 +1,4 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
@@ -9,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fsw", "src\fsw\fsw.csproj", "{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fsw.Host", "src\fsw.Host\fsw.Host.csproj", "{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案文件", "解决方案文件", "{BC22C7B7-88E5-4ECF-88D5-98AC29DFAF3C}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,3 @@
-using System.Windows;
 using static FDNRBox.Win32APIWrapper;
 
 namespace FDNRBox
@@ -26,7 +25,7 @@ namespace FDNRBox
             EnumDesktops(GetProcessWindowStation(), (name, para) =>
             {
                 DesktopList.Add(new WindowsDesktop(name, DesktopCount));
-                if(name == "Default")
+                if (name == "Default")
                     NowDesktop = DesktopCount - 1;
                 return true;
             }, 0);
@@ -34,7 +33,7 @@ namespace FDNRBox
 
         public static void InitDesktops(List<string> DesktopNames)
         {
-            if(!Inited)
+            if (!Inited)
             {
                 RefreshDesktops();
                 foreach (string desktopName in DesktopNames)
@@ -42,7 +41,7 @@ namespace FDNRBox
                     InitNormalDesktop(desktopName);
                 }
             }
-            
+
         }
 
         public static void DestroyDesktops()

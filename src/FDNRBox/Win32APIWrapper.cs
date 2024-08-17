@@ -146,7 +146,7 @@ namespace FDNRBox
         [DllImport("user32.dll")]
         public static extern IntPtr GetThreadDesktop(int dwThreadId);
         [DllImport("user32.dll")]
-        public static extern bool GetUserObjectInformation(IntPtr hObj,int nIndex,ref uint pvInfo,uint nLength,ref int[] lpnLengthNeeded);
+        public static extern bool GetUserObjectInformation(IntPtr hObj, int nIndex, ref uint pvInfo, uint nLength, ref int[] lpnLengthNeeded);
         #endregion
         #region 其他
         [DllImport("Kernel32.dll")]
@@ -200,7 +200,7 @@ namespace FDNRBox
         {
             IntPtr pvInfo = IntPtr.Zero;
             throw new NotImplementedException();
-            
+
         }
 
         #endregion

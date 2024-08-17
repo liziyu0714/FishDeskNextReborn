@@ -1,4 +1,3 @@
-using FDNRBox;
 using FishDeskNextReborn.Helpers;
 using FishDeskNextReborn.resource;
 using FishDeskNextReborn.window;
@@ -36,9 +35,9 @@ namespace FishDeskNextReborn
 
         private Brush ReadAppBrush()
         {
-            if(!Directory.Exists(FDNRBackGround.CustomBrushesPath))
-                Directory.CreateDirectory(FDNRBackGround.CustomBrushesPath); 
-            if(!ConfigHelper.Config.ContainsKey("BackGroundBrush"))
+            if (!Directory.Exists(FDNRBackGround.CustomBrushesPath))
+                Directory.CreateDirectory(FDNRBackGround.CustomBrushesPath);
+            if (!ConfigHelper.Config.ContainsKey("BackGroundBrush"))
                 ConfigHelper.Config["BackGroundBrush"] = resource.DefaultBackGroundBrush.DefaultBackGroundBrushList[0].BackGroundBrushString;
             return (Brush)XamlReader.Parse(ConfigHelper.Config["BackGroundBrush"]);
         }
