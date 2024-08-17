@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FDNRBox\FDNRAPI.csproj" />
+    <ProjectReference Include="..\fsw\fsw.csproj" />
   </ItemGroup>
 
 
