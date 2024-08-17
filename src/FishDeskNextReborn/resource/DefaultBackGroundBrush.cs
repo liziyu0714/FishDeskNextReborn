@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -42,10 +42,10 @@ namespace FishDeskNextReborn.resource
     {
         public static List<FDNRBackGround> DefaultBackGroundBrushList = new List<FDNRBackGround>()
         {
-            new("FDNR经典(内置)", "<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"1,0\" SpreadMethod=\"Reflect\" Opacity=\"1\" xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><LinearGradientBrush.GradientStops><GradientStop Color=\"#FFFBC2EB\" Offset=\"0\" /><GradientStop Color=\"#FFA6C1EE\" Offset=\"1\" /></LinearGradientBrush.GradientStops></LinearGradientBrush>"),
-            new ("幸草橙(内置)", "<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#FFFFC878</SolidColorBrush>"),
-            new ("朴素白(内置)", "<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#FFFF</SolidColorBrush>"),
-            new ("透明(内置)(部分窗口不支持)","<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#00FFFFFF</SolidColorBrush>")
+            new("FDNR经典（内置）", "<LinearGradientBrush StartPoint=\"0,0\" EndPoint=\"1,0\" SpreadMethod=\"Reflect\" Opacity=\"1\" xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\"><LinearGradientBrush.GradientStops><GradientStop Color=\"#FFFBC2EB\" Offset=\"0\" /><GradientStop Color=\"#FFA6C1EE\" Offset=\"1\" /></LinearGradientBrush.GradientStops></LinearGradientBrush>"),
+            new ("幸草橙（内置）", "<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#FFFFC878</SolidColorBrush>"),
+            new ("朴素白（内置）", "<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#FFFF</SolidColorBrush>"),
+            new ("透明（内置，部分窗口不支持）","<SolidColorBrush xmlns=\"http://schemas.microsoft.com/winfx/2006/xaml/presentation\">#00FFFFFF</SolidColorBrush>")
 
         };
 

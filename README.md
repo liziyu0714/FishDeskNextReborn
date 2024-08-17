@@ -10,7 +10,7 @@
 
 本项目将在未来被重新命名——正因为不只于切换桌面。
 
-![JumpList（跳转列表）](./docs/screenshot.png)
+![概述](docs/general.png)
 
 ## 前言
 
@@ -118,7 +118,8 @@ dotnet publish --arch arm64 --os win
 ## 用法
 
 ### GUI
-![使用截图](./docs/JumpList_screenshot.png)
+
+![GUI](docs/jumplist.png)
 
 右击（长按）`FishDeskNextReborn.exe`，单击“以管理员身份运行”。
 
@@ -181,12 +182,12 @@ dotnet publish --arch arm64 --os win
 - [x] 单实例功能
 - [x] 部署工具
 - [x] 交叉编译
-- [X] 更改配色 [文档](./docs/ColorMgmt.md)
+- [x] 更改配色 [文档](docs/color-management.md)
+- [x] 自绘图标（将来可能由[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)绘制）
 - [ ] 切换用户（Next Account）
 - [ ] 切换会话（Next Session）
 - [ ] 全屏动画
-- [ ] 自更新
-- [ ] 自绘图标（将来可能由[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)绘制）
+- [ ] 自更新（将来可能由[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)维护版本列表）
 
 ## 关于
 
@@ -194,4 +195,4 @@ FishDeskNext: Reborn采用[GNU通用公共许可证第3版(GPLv3.0)](https://www
 
 本程序的作者是[liziyu0714](https://github.com/liziyu0714/)。
 
-本文档的主要作者是[liziyu0714](https://github.com/liziyu0714/)和[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)。
+本文档的主要作者是[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)和[liziyu0714](https://github.com/liziyu0714/)。
