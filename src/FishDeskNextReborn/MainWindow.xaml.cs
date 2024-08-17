@@ -20,6 +20,7 @@ namespace FishDeskNextReborn
         public FlitterWindow flitterWindow = new FlitterWindow();
         public ToggleDesktopMode togglemode = ToggleDesktopMode.TaskView;
         public ColorMgmt colorMgmtwindow = new();
+        public globalMaskWindow globalMask = new();
 
         public enum ToggleDesktopMode
         {
@@ -78,15 +79,21 @@ namespace FishDeskNextReborn
 
         private void Test()
         {
-            desktopMgmtWindow.Show();
-            deployWindow.Show();
-            colorMgmtwindow.Show();
-            flitterWindow.Show();
+            //desktopMgmtWindow.Show();
+            //deployWindow.Show();
+            //colorMgmtwindow.Show();
+            //flitterWindow.Show();
             //throw new NotImplementedException();
+            globalMask = new();
+            globalMask.Show();
+            Thread.Sleep(1000);
+            globalMask.Close();
         }
 
         public void NextDesktop()
         {
+            //globalMask = new();
+            //globalMask.Show();
             if (togglemode == ToggleDesktopMode.TaskView)
             {
                 ShowDesk();
@@ -95,6 +102,8 @@ namespace FishDeskNextReborn
                 killlistHelper.KILL();
             }
             else DesktopManager.NextDesktop();
+            Thread.Sleep(1000);
+            globalMask.Close();
         }
         public void PreviousDesktop()
         {
@@ -110,6 +119,7 @@ namespace FishDeskNextReborn
 
         public void ChangeToggleMode()
         {
+            
             if (togglemode == ToggleDesktopMode.TaskView)
             {
                 togglemode = ToggleDesktopMode.Win32;

@@ -1,0 +1,15 @@
+EnumDesktops
+GetProcessWindowStation
+EnumDesktopWindows
+CreateDesktop
+CloseDesktop
+OpenDesktop
+OpenInputDesktop
+SetThreadDesktop
+SwitchDesktop
+GetThreadDesktop
+GetUserObjectInformation
+GetCurrentThreadId
+GetEnvironmentStrings
+ResumeThread
+CreateProcess

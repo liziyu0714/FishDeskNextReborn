@@ -36,7 +36,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button x:Name="ColorMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonDefault}" FontFamily="STZhongsong">打开配色管理器</Button>
-                    <Button x:Name="DesktopMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong">打开桌面管理器</Button>
+                    <Button x:Name="DesktopMgmtOpenBtn"  Width="180" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong">打开Win32桌面管理器</Button>
                 </StackPanel>
 
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
