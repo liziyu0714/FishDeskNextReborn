@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using fsw;
 using System.Runtime.InteropServices;
 namespace fsw.Host
@@ -11,7 +11,7 @@ namespace fsw.Host
             {
                 WorkloadAssemble = "Example.dll",
                 WorkloadAuthor = "liziyu0714",
-                WorkloadFriendlyName = "A Example fsw workload",
+                WorkloadFriendlyName = "An example fsw workload",
                 WorkloadGlobalName = "example",
                 WorkloadMainClassName = "MainClass",
                 WorkloadProjectAddress = "https://github.com/liziyu0714/FishDeskNextReborn",
