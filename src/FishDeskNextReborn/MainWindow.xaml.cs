@@ -119,7 +119,7 @@ namespace FishDeskNextReborn
 
         public void ChangeToggleMode()
         {
-            
+
             if (togglemode == ToggleDesktopMode.TaskView)
             {
                 togglemode = ToggleDesktopMode.Win32;
