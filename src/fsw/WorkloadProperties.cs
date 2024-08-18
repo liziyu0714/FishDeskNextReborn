@@ -28,7 +28,7 @@ namespace fsw
         public required string WorkloadProjectAddress { get; set; }
         //负载使用的程序集，可以是dll类库或是适用于当前平台的可执行程序
         [JsonProperty("assemble")]
-        public required string WorkloadAssemble { get; set; }
+        public required string WorkloadAssembly { get; set; }
         //负载适用的平台
         [JsonProperty("os")]
         [JsonConverter(typeof(StringEnumConverter))]

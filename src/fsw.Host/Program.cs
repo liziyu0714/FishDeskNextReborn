@@ -9,7 +9,7 @@ namespace fsw.Host
         {
             WorkloadProperties workloadProperties = new WorkloadProperties()
             {
-                WorkloadAssemble = "Example.dll",
+                WorkloadAssembly = "Example.dll",
                 WorkloadAuthor = "liziyu0714",
                 WorkloadFriendlyName = "An example fsw workload",
                 WorkloadGlobalName = "example",
