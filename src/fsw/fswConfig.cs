@@ -11,4 +11,9 @@ namespace fsw
         public required string TmpFilePath { get; set; }
         public required string fswWorkDirectory { get; set; }
     }
+
+    public class fswConfig
+    {
+        public required WorkloadReadConfig workloadReadConfig { get; set; }
+    }
 }
