@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FishDeskNextReborn"
         xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:lan="clr-namespace:FishDeskNextReborn.Resources"
         WindowStyle="None"
         AllowsTransparency="True"
         mc:Ignorable="d"
@@ -20,23 +21,23 @@
         <Border CornerRadius="5" BorderThickness="2" BorderBrush="Black">
             <StackPanel Orientation="Vertical" Margin="20">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="DragBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">按住以拖拽</Button>
+                    <Button x:Name="DragBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong" Content="{DynamicResource DragBtnText}"></Button>
                     <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}" Margin="10">FishDeskNextReborn</TextBlock>
-                    <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong">关闭窗口</Button>
+                    <Button x:Name="CloseWindowBtn" Width="120" Margin="5" Style="{StaticResource ButtonDanger}" FontFamily="STZhongsong" Content="{DynamicResource CloseWindowBtnText}"></Button>
                 </StackPanel>
 
-                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">支持开源和开放的软件！本程序自豪地采用GPLv3.0许可证。</TextBlock>
-                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">开源地址：
+                <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong" Text="{DynamicResource SupportOpenSource}"></TextBlock>
+                <TextBlock FontSize="15" HorizontalAlignment="Center" FontFamily="STZhongsong" Style="{StaticResource TextBlockDefault}">
                     <Hyperlink x:Name="linkOpenHyperLink" NavigateUri="https://github.com/liziyu0714/FishDeskNextReborn">https://github.com/liziyu0714/FishDeskNextReborn</Hyperlink>
                 </TextBlock>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="GoToFlitterBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开过滤器</Button>
-                        <Button x:Name="OpenDeployBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong">打开部署工具</Button>
-                        <Button x:Name="DebugBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong">调试按钮</Button>
+                        <Button x:Name="GoToFlitterBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong" Content="{DynamicResource GoToFlitterBtnText}"></Button>
+                    <Button x:Name="OpenDeployBtn" Width="120" Margin="5" Style="{StaticResource ButtonPrimary}" FontFamily="STZhongsong" Content="{DynamicResource OpenDeployBtnText}"></Button>
+                    <Button x:Name="DebugBtn" Width="120" Margin="5" Style="{StaticResource ButtonDashedPrimary}" FontFamily="STZhongsong" Content="{DynamicResource DebugBtnText}"></Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="ColorMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonDefault}" FontFamily="STZhongsong">打开配色管理器</Button>
-                    <Button x:Name="DesktopMgmtOpenBtn"  Width="180" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong">打开Win32桌面管理器</Button>
+                    <Button x:Name="ColorMgmtOpenBtn"  Width="120" Margin="5" Style="{StaticResource ButtonDefault}" FontFamily="STZhongsong" Content="{DynamicResource ColorMgmtOpenBtnText}"></Button>
+                    <Button x:Name="DesktopMgmtOpenBtn"  Width="180" Margin="5" Style="{StaticResource ButtonSuccess}" FontFamily="STZhongsong" Content="{DynamicResource DesktopMgmtOpenBtnText}"></Button>
                 </StackPanel>
 
                 <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">

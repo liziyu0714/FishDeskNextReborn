@@ -2,7 +2,7 @@ using System.IO;
 using System.Windows.Markup;
 using System.Windows.Media;
 
-namespace FishDeskNextReborn.resource
+namespace FishDeskNextReborn.Resources
 {
     public class FDNRBackGround
     {

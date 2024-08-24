@@ -22,6 +22,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
                 <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
+                <ResourceDictionary Source="/Resources/zh-CN.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <LinearGradientBrush x:Key="BackGroundBrush" StartPoint="0,0" EndPoint="1,0" SpreadMethod="Reflect" Opacity="1">
                 <GradientStop Color="#fbc2eb" Offset="0.0" />

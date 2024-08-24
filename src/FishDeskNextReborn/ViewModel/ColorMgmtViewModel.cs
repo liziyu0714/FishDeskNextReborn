@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.Input;
-using FishDeskNextReborn.resource;
+using FishDeskNextReborn.Resources;
 using System.Diagnostics;
 using System.IO;
 

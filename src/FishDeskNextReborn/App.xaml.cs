@@ -1,6 +1,7 @@
 using FishDeskNextReborn.Helpers;
-using FishDeskNextReborn.resource;
+using FishDeskNextReborn.Resources;
 using FishDeskNextReborn.window;
+using System.Globalization;
 using System.IO;
 using System.Windows;
 using System.Windows.Markup;
@@ -30,6 +31,8 @@ namespace FishDeskNextReborn
                 mutexHelper.CreateMutex();
                 ConfigHelper.Read();
                 this.Resources["BackGroundBrush"] = ReadAppBrush();
+                ResourceDictionary dictionary = new ResourceDictionary { Source = new Uri($@"Resources\{CultureInfo.CurrentUICulture}.xaml", UriKind.RelativeOrAbsolute) };
+                Application.Current.Resources.MergedDictionaries.Add (dictionary);
             }
         }
 
@@ -38,7 +41,7 @@ namespace FishDeskNextReborn
             if (!Directory.Exists(FDNRBackGround.CustomBrushesPath))
                 Directory.CreateDirectory(FDNRBackGround.CustomBrushesPath);
             if (!ConfigHelper.Config.ContainsKey("BackGroundBrush"))
-                ConfigHelper.Config["BackGroundBrush"] = resource.DefaultBackGroundBrush.DefaultBackGroundBrushList[0].BackGroundBrushString;
+                ConfigHelper.Config["BackGroundBrush"] = FishDeskNextReborn.Resources.DefaultBackGroundBrush.DefaultBackGroundBrushList[0].BackGroundBrushString;
             return (Brush)XamlReader.Parse(ConfigHelper.Config["BackGroundBrush"]);
         }
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)

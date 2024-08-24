@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:FishDeskNextReborn.window"
         mc:Ignorable="d"
         xmlns:hc="https://handyorg.github.io/handycontrol"
-        Title="FDNR部署工具" Height="250" Width="440">
+        xmlns:lan="clr-namespace:FishDeskNextReborn.Resources"
+        Title="{DynamicResource DeployWindowTitleShort}" Height="250" Width="440">
     <Grid>
         
         <Grid.Background>
@@ -19,26 +20,26 @@
             <StackPanel VerticalAlignment="Top" Margin="0,10,10,10"/>
         </ScrollViewer>
         <StackPanel Orientation="Vertical">
-            
-            <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}" Margin="10">FishDeskNextReborn部署工具</TextBlock>
+
+            <TextBlock FontSize="20" HorizontalAlignment="Center" Style="{StaticResource TextBlockLargeBold}" Margin="10" Text="{DynamicResource DeployWindowTitle}"></TextBlock>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <StackPanel Orientation="Vertical" Margin="10">
                     <Button Height="120" x:Name="RunAsAdminBtn" Click="RunAsAdminBtn_Click">
                         <Path Data="{StaticResource AddGeometry}" Stroke="AliceBlue" Fill="Black" Stretch="Uniform" Width="100"/>
                     </Button>
-                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">以管理员权限重新启动</TextBlock>
+                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong" Text="{DynamicResource RestartAsAdmin}"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10">
                     <Button Height="120" x:Name="GenerateLinkBtn" Click="GenerateLinkBtn_Click">
                         <Path Data="{StaticResource UpGeometry}" Stroke="AliceBlue" Fill="Black"/>
                     </Button>
-                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">部署快捷方式</TextBlock>
+                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong" Text="{DynamicResource DeployLinks}"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Margin="10">
                     <Button Height="120">
                         <Path Data="{StaticResource DownloadGeometry}" Stroke="AliceBlue" Fill="Black" Stretch="Uniform"/>
                     </Button>
-                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong">复制至%APPDATA%</TextBlock>
+                    <TextBlock FontSize="10" HorizontalAlignment="Center" Style="{StaticResource TextBlockDefaultSecLight}" FontFamily="STZhongsong" Text="{DynamicResource CopyToAppData}"></TextBlock>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
