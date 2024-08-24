@@ -1,4 +1,4 @@
-using FishDeskNextReborn.resource;
+using FishDeskNextReborn.Resources;
 using FishDeskNextReborn.ViewModel;
 using System.Windows;
 using System.Windows.Controls;
