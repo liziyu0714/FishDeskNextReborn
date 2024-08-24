@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using fsw;
 using System.Runtime.InteropServices;
 namespace fsw.Host
@@ -9,7 +9,6 @@ namespace fsw.Host
         {
             fsw.fswCommandHost host = new fsw.fswCommandHost();
             host.Execute("#123");
-
         }
     }
 }
