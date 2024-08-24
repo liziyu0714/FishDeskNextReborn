@@ -81,6 +81,8 @@ namespace fsw
     {
         public List<Workload> Workloads { get; }
         public List<object> PersistentWorkloadClass { get; set; }
+
+        public Dictionary<string,string> CommandMapping { get; set; }
         public void Init()
         {
 
@@ -90,12 +92,14 @@ namespace fsw
         {
             Workloads = new List<Workload>();
             PersistentWorkloadClass = new List<object>();
+            CommandMapping = new Dictionary<string,string>();
         }
 
         public fswCommandHost(string[] pathsToworkload, fswConfig config)
         {
             Workloads = new List<Workload>();
             PersistentWorkloadClass = new List<object>();
+            CommandMapping = new Dictionary<string,string>();
             foreach (string path in pathsToworkload)
             {
                 Workload workload = new Workload(new FileInfo(path), config);
@@ -103,12 +107,64 @@ namespace fsw
             }
         }
 
+        /// <summary>
+        /// 添加workload
+        /// </summary>
+        /// <param name="workload">workload</param>
         public void AddWorkload(Workload workload)
         {
             if (workload.Properties.PersistenceNeeded && workload.MainClass != null)
                 PersistentWorkloadClass.Add(Activator.CreateInstance(workload.MainClass)!);
+            if(workload.Commands != null)
+            {
+                foreach (WorkloadCommands commands in workload.Commands)
+                {
+                    CommandMapping[commands.WorkloadCommand] = commands.WorkloadOriginCommand;
+                }
+            }
             Workloads.Add(workload);
         }
+
+        /// <summary>
+        /// 卸载指定的workload
+        /// </summary>
+        /// <param name="workloadName">workload的全局名称</param>
+        public void RemoveWorkload(string workloadName)
+        {
+            foreach(Workload workload in Workloads)
+            { 
+                if(workload.Properties.WorkloadGlobalName == workloadName)
+                {
+                    //移除持久化类
+                    if(workload.MainClass != null)
+                        foreach(object obj in PersistentWorkloadClass)
+                        {
+                            if(obj.GetType() == workload.MainClass)
+                                PersistentWorkloadClass.Remove(obj);
+                        }
+
+                    //移除命令映射
+                    if(workload.Commands != null)
+                        foreach(WorkloadCommands commands in workload.Commands)
+                        {
+                            foreach(KeyValuePair<string,string> pair in CommandMapping)
+                            {
+                                if(pair.Key == commands.WorkloadCommand)
+                                    CommandMapping.Remove(pair.Value);
+                            }
+                        }
+                    //卸载workload
+                    Workloads.Remove(workload);
+                }
+            }
+        }
+
+        /// <summary>
+        /// 执行指令并返回结果
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
 
         public string Execute(string command)
         {
@@ -120,7 +176,7 @@ namespace fsw
                 case '/':
                     throw new NotImplementedException();
                 case '#':
-                    throw new NotImplementedException();
+                    return ExecuteFSharpCommand(command.Substring(1));
                 default:
                     return $"Unknow Command Header \"{command[0]}\"";
             }
@@ -151,9 +207,33 @@ namespace fsw
             return output;
         }
 
+        private bool DetectFSharp()
+        {
+            using (Process process = new Process())
+            {
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.RedirectStandardInput = true;
+                process.StartInfo.CreateNoWindow=true;
+                process.StartInfo.FileName = "dotnet";
+                try
+                {
+                    process.Start();
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            return true;
+
+        }
+
         public string ExecuteFSharpCommand(string fSharpCommand)
         {
-            throw new NotImplementedException();
+            if (!DetectFSharp())
+                return "dotnet SDK not found.You need to intall dotnet to execute F# command.";
+            return fSharpCommand;
         }
     }
 }

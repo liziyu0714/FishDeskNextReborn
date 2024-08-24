@@ -13,5 +13,7 @@ namespace fsw
         public required string WorkloadCommand;
         [JsonProperty("description")]
         public required string WorkloadCommandDescription;
+        [JsonProperty("origin")]
+        public required string WorkloadOriginCommand;
     }
 }
