@@ -1,11 +1,11 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     xmlns:local="clr-namespace:FishDeskNextReborn">
     <!--主窗口-->
     <system:String x:Key="DragBtnText">按住以拖拽</system:String>
     <system:String x:Key="CloseWindowBtnText">关闭窗口</system:String>
-    <system:String x:Key="SupportOpenSource">支持开源和开放的软件！本程序自豪地采用GPLv3.0许可证。</system:String>
+    <system:String x:Key="SupportOpenSource">支持开源的自由软件！本程序自豪地采用GPLv3.0许可证。</system:String>
     <system:String x:Key="GoToFlitterBtnText">打开过滤器</system:String>
     <system:String x:Key="OpenDeployBtnText">打开部署工具</system:String>
     <system:String x:Key="DebugBtnText">调试按钮</system:String>

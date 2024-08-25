@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:FishDeskNextReborn">
+    <!--主窗口-->
+    <system:String x:Key="DragBtnText">押してドラッグ</system:String>
+    <system:String x:Key="CloseWindowBtnText">閉じます</system:String>
+    <system:String x:Key="SupportOpenSource">オープンソースのフリーソフトウェアをサポートしてください！このプログラムはGPLv 3.0ライセンスを誇りに思っています。</system:String>
+    <system:String x:Key="GoToFlitterBtnText">フィルタを開きます</system:String>
+    <system:String x:Key="OpenDeployBtnText">配備ツール開きます</system:String>
+    <system:String x:Key="DebugBtnText">デバッグ</system:String>
+    <system:String x:Key="ColorMgmtOpenBtnText">カラーマネージャ</system:String>
+    <system:String x:Key="DesktopMgmtOpenBtnText">Win32デスクトップマネージャを開きます</system:String>
+    <!--部署工具窗口-->
+    <system:String x:Key="DeployWindowTitleShort">FDNR配備ツール</system:String>
+    <system:String x:Key="DeployWindowTitle">FishDeskNextReborn配備ツール</system:String>
+    <system:String x:Key="RestartAsAdmin">Administratorとして再起動します</system:String>
+    <system:String x:Key="DeployLinks">ショートカットを生成します</system:String>
+    <system:String x:Key="CopyToAppData">プログラムを%APPDATA%フォルダにコピーします</system:String>
+    
+</ResourceDictionary>
