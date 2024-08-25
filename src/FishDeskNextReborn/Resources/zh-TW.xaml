@@ -1,0 +1,21 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:local="clr-namespace:FishDeskNextReborn">
+    <!--主窗口-->
+    <system:String x:Key="DragBtnText">按住以拖拽</system:String>
+    <system:String x:Key="CloseWindowBtnText">關閉視窗</system:String>
+    <system:String x:Key="SupportOpenSource">支持開源的自由軟體！本程式自豪地採用GPLv3.0許可證。</system:String>
+    <system:String x:Key="GoToFlitterBtnText">打開過濾器</system:String>
+    <system:String x:Key="OpenDeployBtnText">打開部署器</system:String>
+    <system:String x:Key="DebugBtnText">調適按鈕</system:String>
+    <system:String x:Key="ColorMgmtOpenBtnText">打开配色管理器</system:String>
+    <system:String x:Key="DesktopMgmtOpenBtnText">打开Win32桌面管理器</system:String>
+    <!--部署工具窗口-->
+    <system:String x:Key="DeployWindowTitleShort">FDNR部署器</system:String>
+    <system:String x:Key="DeployWindowTitle">FishDeskNextReborn部署器</system:String>
+    <system:String x:Key="RestartAsAdmin">以管理員權限重新啟動</system:String>
+    <system:String x:Key="DeployLinks">部署快捷方式</system:String>
+    <system:String x:Key="CopyToAppData">複製到%APPDATA%</system:String>
+    
+</ResourceDictionary>
