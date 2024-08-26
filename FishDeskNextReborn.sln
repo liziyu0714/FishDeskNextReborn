@@ -7,10 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FishDeskNextReborn", "src\F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FDNRAPI", "src\FDNRBox\FDNRAPI.csproj", "{2961AABE-BE56-4537-9B57-B2BCDA64FE21}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fsw", "src\fsw\fsw.csproj", "{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fsw.Host", "src\fsw.Host\fsw.Host.csproj", "{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案文件", "解决方案文件", "{BC22C7B7-88E5-4ECF-88D5-98AC29DFAF3C}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
@@ -40,28 +36,12 @@ Global
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|x64.ActiveCfg = Release|Any CPU
 		{2961AABE-BE56-4537-9B57-B2BCDA64FE21}.Release|x64.Build.0 = Release|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Debug|x64.Build.0 = Debug|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Release|x64.ActiveCfg = Release|Any CPU
-		{4DB07A81-2DE1-4CF2-921D-5E99C2277CA2}.Release|x64.Build.0 = Release|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Debug|x64.Build.0 = Debug|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Release|x64.ActiveCfg = Release|Any CPU
-		{5334A7EE-5F4A-4175-88FE-DF0C39BAC779}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		RESX_NeutralResourcesLanguage = zh-CN
 		SolutionGuid = {ABA1A802-7DE3-4CDB-967C-349AB8798B71}
+		RESX_NeutralResourcesLanguage = zh-CN
 	EndGlobalSection
 EndGlobal
