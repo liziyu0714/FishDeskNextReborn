@@ -25,32 +25,32 @@ namespace fsw
         /// <summary>
         /// 用于从文件初始化workload
         /// </summary>
-        /// <param name="pathToWorkloadFile">workload的路径</param>
+        /// <param name="workloadFile">workload的路径</param>
         /// <param name="workloadReadConfig">workload读取配置</param>
         /// <exception cref="FileNotFoundException">当workload或Assembly路径无效时抛出此异常</exception>
         /// <exception cref="Exception">workload指定的主类未找到时抛出此异常</exception>
-        public Workload(FileInfo pathToWorkloadFile, fswConfig config)
+        public Workload(FileInfo workloadFile, fswConfig config)
         {
-            if (!pathToWorkloadFile!.Exists)
+            if (!workloadFile!.Exists)
                 throw new FileNotFoundException("Invalid Workload File");
-            ZipArchive workloadZipArchive = ZipFile.OpenRead(pathToWorkloadFile.FullName);
-            workloadZipArchive.ExtractToDirectory(config.workloadReadConfig.TmpFilePath);
-            DirectoryInfo directoryInfo = new DirectoryInfo(config.workloadReadConfig.TmpFilePath);
+            ZipArchive workloadZipArchive = ZipFile.OpenRead(workloadFile.FullName);
+            workloadZipArchive.ExtractToDirectory(config.WorkloadReadConfig.TmpFilePath,true);
+            DirectoryInfo directoryInfo = new DirectoryInfo(config.WorkloadReadConfig.TmpFilePath);
             foreach (FileInfo file in directoryInfo.GetFiles())
             {
                 if (!fswStaticValues.SpecialFileNames.Exists((s) => s == file.Name))
                 {
-                    File.Copy(file.FullName, Path.Combine(config.workloadReadConfig.fswWorkDirectory, file.Name));
+                    File.Copy(file.FullName, Path.Combine(config.WorkloadReadConfig.fswWorkDirectory, file.Name),true);
                 }
                 if (file.Name == "workload.json")
-                    Properties = JsonConvert.DeserializeObject<WorkloadProperties>(file.FullName)!;
+                    Properties = JsonConvert.DeserializeObject<WorkloadProperties>(File.ReadAllText(file.FullName))!;
                 if (file.Name == "command.json")
-                    Commands = JsonConvert.DeserializeObject<List<WorkloadCommands>>(file.FullName)!;
+                    Commands = JsonConvert.DeserializeObject<List<WorkloadCommands>>(File.ReadAllText(file.FullName))!;
                 File.Delete(file.FullName);
             }
 
             Properties!.IsBuiltIn = false;
-            DirectoryInfo fswWorkDirectory = new(config.workloadReadConfig.fswWorkDirectory);
+            DirectoryInfo fswWorkDirectory = new(config.WorkloadReadConfig.fswWorkDirectory);
             if (Properties.WorkloadAssembly != "" && Properties.WorkloadMainClassName != "")
             {
                 FileInfo assemblyfile = Array.Find(fswWorkDirectory.GetFiles(), (info) => info.Name == Properties.WorkloadAssembly)!;

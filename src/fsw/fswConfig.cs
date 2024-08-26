@@ -14,6 +14,6 @@ namespace fsw
 
     public class fswConfig
     {
-        public required WorkloadReadConfig workloadReadConfig { get; set; }
+        public required WorkloadReadConfig WorkloadReadConfig { get; set; }
     }
 }
