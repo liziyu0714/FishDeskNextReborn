@@ -1,6 +1,8 @@
 # <center> FDNR - FishDeskNext: Reborn </center>
 
-<center> curl tarikkochan.top/fdnr | bash
+```bash 快速开始
+curl tarikkochan.top/fdnr | bash
+```
 
 [![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
@@ -186,6 +188,8 @@ dotnet publish --arch arm64 --os win
 - [x] 交叉编译
 - [x] 更改配色 [文档](docs/color-management.md)
 - [x] 自绘图标（将来可能由[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)绘制）
+- [ ] #10
+- [ ] #12
 - [ ] 切换用户（Next Account）
 - [ ] 切换会话（Next Session）
 - [ ] 全屏动画
