@@ -1,6 +1,6 @@
-# FDNR - FishDeskNext: Reborn
+# <center> FDNR - FishDeskNext: Reborn
 
-<center style='color:red;'> curl tarikkochan.top/fdnr | bash </center>
+<center> curl tarikkochan.top/fdnr | bash
 
 [![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
