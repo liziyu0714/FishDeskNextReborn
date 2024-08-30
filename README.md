@@ -1,10 +1,11 @@
 # <center> FDNR - FishDeskNext: Reborn </center>
 
+---
+
 ```bash 快速开始
-    curl tarikkochan.top/fdnr | bash
+                                    curl tarikkochan.top/fdnr | bash
 ```
 
----
 ---
 
 [![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
