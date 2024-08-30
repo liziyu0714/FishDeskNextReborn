@@ -1,16 +1,14 @@
 # <center> FDNR - FishDeskNext: Reborn </center>
 
----
+[![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
-<center> 快速开始
+---
 
 ```bash 
                                 curl tarikkochan.top/fdnr | bash
 ```
 
 ---
-
-[![.NET Core Desktop](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/liziyu0714/FishDeskNextReborn/actions/workflows/dotnet-desktop.yml)
 
 > 写更多Next，不止于切换桌面。
 > ——[liziyu0714](https://github.com/liziyu0714/)
